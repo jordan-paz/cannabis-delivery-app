@@ -5,7 +5,7 @@ import ProductCard from "./productCard"
 const CatalogWrapper = styled.main`
   display: grid;
   justify-content: center;
-  grid-templet-colums: repeat(auto-fit, 200px);
+  grid-template-columns: 40vw 40vw;
   grid-gap: 20px;
 `
 
