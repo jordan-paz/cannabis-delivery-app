@@ -11,8 +11,7 @@ const HeaderWrapper = styled.header`
   left: 0;
   right: 0;
   height: 60px;
-  top:0;
-  }
+  top: 0;
 `
 
 const HeaderContent = styled.div`
@@ -38,7 +37,11 @@ const Header = () => (
     <HeaderContent>
       <DrawerMenu />
       <HeaderLogo>
-        <Link to="/">SCD</Link>
+        <Link to="/">
+          <h3>
+            <b>SCD</b>
+          </h3>
+        </Link>
       </HeaderLogo>
       <ShoppingCart>Cart</ShoppingCart>
     </HeaderContent>

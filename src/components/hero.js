@@ -3,22 +3,16 @@ import styled from "styled-components"
 import weedBackground from "../images/weed-background.jpg"
 
 const HeroWrapper = styled.div`
+  display: flex;
+  margin-top: 60px;
   width: 100%;
-  height: 80vh;
+  height: 30vh;
   background-color: #eee;
-  display: grid;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
-  grid-template-columns: 50px auto 50px;
-  grid-template-rows: auto;
-  grid-template-areas:
-    ". announcement ."
-    ". callToAction .";
 `
 
-const StyledAnnouncement = styled.h1`
-  grid-area: announcement;
-  padding-top: 80px;
+const StyledAnnouncement = styled.p`
   color: #000;
 `
 
@@ -32,8 +26,7 @@ const CallToActionButton = styled.button`
 const Hero = () => {
   return (
     <HeroWrapper>
-      <StyledAnnouncement>Treat Yourself</StyledAnnouncement>
-      <CallToActionButton>SHOP</CallToActionButton>
+      <StyledAnnouncement>Promo goes here</StyledAnnouncement>
     </HeroWrapper>
   )
 }

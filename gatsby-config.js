@@ -5,6 +5,12 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
+    `gatsby-source-webjoint`,
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
@@ -14,13 +20,34 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `products`,
+        path: `${__dirname}/src/products/`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-fonts",
       options: {
         fonts: ["roboto:300,400,500,700", `source sans pro\:300,400,400i,700`],
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,9 +55,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
