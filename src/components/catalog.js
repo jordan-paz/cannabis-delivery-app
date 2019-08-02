@@ -9,19 +9,12 @@ const CatalogWrapper = styled.main`
   grid-gap: 20px;
 `
 
-const Catalog = () => {
+const Catalog = ({ edges }) => {
   return (
     <CatalogWrapper>
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      {edges.map(({ node }) => {
+        return <ProductCard key={node.id} node={node} />
+      })}
     </CatalogWrapper>
   )
 }

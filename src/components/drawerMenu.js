@@ -52,8 +52,8 @@ export default function TemporaryDrawer() {
         </ListItem>
         <Divider />
         {["Flower", "Vaporizers", "Edibles", "Prerolls", "Gear"].map(text => (
-          <Link to={`/${text.toLowerCase()}`}>
-            <ListItem button key={text}>
+          <Link to={`/${text.toLowerCase()}`} key={text}>
+            <ListItem button>
               <ListItemText primary={text} />
             </ListItem>
           </Link>

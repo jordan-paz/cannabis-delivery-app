@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create product pages.
     result.data.allProduct.edges.forEach(edge => {
+      console.log(edge.node)
       createPage({
         // Path for this page — required
         path: `products/${edge.node.id}`,
