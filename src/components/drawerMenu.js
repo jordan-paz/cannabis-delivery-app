@@ -42,6 +42,7 @@ export default function TemporaryDrawer() {
 
   const MenuList = () => (
     <div
+      style={{ width: "100vw" }}
       role="navigation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}

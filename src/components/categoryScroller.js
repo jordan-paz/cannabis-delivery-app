@@ -28,39 +28,6 @@ const ScrollerWrapper = styled.div`
   grid-template-columns: repeat(5, calc(40%));
 `
 
-const products = [
-  {
-    name: "Grateful Breath",
-    price: 40.0,
-    type: "Indica",
-    thc: 30.29,
-  },
-  {
-    name: "Sauce",
-    price: 40.0,
-    type: "Sativa",
-    thc: 27.29,
-  },
-  {
-    name: "XXX",
-    price: 40.0,
-    type: "Indica",
-    thc: 30.29,
-  },
-  {
-    name: "Pomegranate",
-    price: 40.0,
-    type: "Hybrid",
-    thc: 30.29,
-  },
-  {
-    name: "Sunset Sherbert",
-    price: 40.0,
-    type: "Hybrid",
-    thc: 30.29,
-  },
-]
-
 const CategoryScroller = ({ products, title }) => {
   return (
     <CategoryScrollerSection>
