@@ -11,6 +11,9 @@ margin-top: 60px;
   left: 0;
   right: 0;
   height: 180px;
+  small {
+    margin: 3px;
+  }
   }
 `
 

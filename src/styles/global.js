@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
+    color: #000;
   }
   h3 {
     margin: 0;
