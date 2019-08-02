@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import ProductCard from "./productCard"
 
@@ -61,22 +61,16 @@ const products = [
   },
 ]
 
-const CategoryScroller = ({ title }) => {
+const CategoryScroller = ({ products, title }) => {
   return (
     <CategoryScrollerSection>
       <ScrollerHeader>
         <h2>{title}</h2>
       </ScrollerHeader>
       <ScrollerWrapper>
-        {products.map(({ name, price, type, thc }) => (
-          <ProductCard
-            key={name}
-            name={name}
-            price={price}
-            type={type}
-            thc={thc}
-          />
-        ))}
+        {products.slice(0, 5).map(({ node }) => {
+          return <ProductCard node={node} />
+        })}
       </ScrollerWrapper>
     </CategoryScrollerSection>
   )

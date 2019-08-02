@@ -8,7 +8,6 @@ margin-top: 60px;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-color: #FAFAFF;
   left: 0;
   right: 0;
   height: 180px;

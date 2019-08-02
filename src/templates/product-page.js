@@ -53,9 +53,6 @@ export const query = graphql`
       description
       variants {
         flavor
-        image {
-          url
-        }
         price
         unitWeight
         unit

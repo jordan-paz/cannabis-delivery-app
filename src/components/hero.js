@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import weedBackground from "../images/weed-background.jpg"
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -14,13 +13,6 @@ const HeroWrapper = styled.div`
 
 const StyledAnnouncement = styled.p`
   color: #000;
-`
-
-const CallToActionButton = styled.button`
-  grid-area: callToAction;
-  width: 200px;
-  height: 60px;
-  border: solid 2px #000;
 `
 
 const Hero = () => {
