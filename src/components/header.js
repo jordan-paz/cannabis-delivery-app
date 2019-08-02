@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import DrawerMenu from "./drawerMenu"
+import shoppingCart from "../images/shopping-cart.svg"
 
 const HeaderWrapper = styled.header`
   background: white;
@@ -27,7 +28,7 @@ const HeaderLogo = styled.div`
   max-height: 100%;
 `
 
-const ShoppingCart = styled.div`
+const ShoppingCart = styled.img`
   margin-right: 1rem;
   max-height: 100%;
 `
@@ -43,7 +44,7 @@ const Header = () => (
           </h3>
         </Link>
       </HeaderLogo>
-      <ShoppingCart>Cart</ShoppingCart>
+      <ShoppingCart src={shoppingCart} />
     </HeaderContent>
   </HeaderWrapper>
 )

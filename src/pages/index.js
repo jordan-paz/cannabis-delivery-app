@@ -13,20 +13,20 @@ const IndexPage = ({
   },
 }) => {
   const concentrates = edges.filter(edge => edge.node.type === "Concentrate")
-  const flowers = edges.filter(edge => edge.node.type === "Buds")
+  const buds = edges.filter(edge => edge.node.type === "Buds")
 
   return (
     <Layout>
       <SEO title="Home" />
       <Hero />
       <MainWrapper>
-        <CategoryScroller title={"Flower"} products={flowers} />
-        <CategoryScroller title={"Vapes"} products={flowers} />
-        <CategoryScroller title={"Edibles"} products={flowers} />
-        <CategoryScroller title={"Concentrates"} products={flowers} />
-        <CategoryScroller title={"Topicals"} products={flowers} />
-        <CategoryScroller title={"Tinctures"} products={flowers} />
-        <CategoryScroller title={"Gear"} products={flowers} />
+        <CategoryScroller title={"Buds"} products={buds} />
+        <CategoryScroller title={"Vaporizers"} products={buds} />
+        <CategoryScroller title={"Edibles"} products={buds} />
+        <CategoryScroller title={"Concentrates"} products={buds} />
+        <CategoryScroller title={"Topicals"} products={buds} />
+        <CategoryScroller title={"Tinctures"} products={buds} />
+        <CategoryScroller title={"Gear"} products={buds} />
       </MainWrapper>
     </Layout>
   )

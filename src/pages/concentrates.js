@@ -5,23 +5,23 @@ import ShopHeader from "../components/shopHeader"
 import SEO from "../components/seo"
 import Catalog from "../components/catalog"
 
-const VaporizersPage = ({
+const ConcentratesPage = ({
   data: {
     allProduct: { edges },
   },
 }) => {
   return (
     <Layout>
-      <SEO title="Vaporizers" />
-      <ShopHeader category="Vaporizers" />
+      <SEO title="Concentrates" />
+      <ShopHeader category="Concentrates" />
       <Catalog edges={edges} />
     </Layout>
   )
 }
 
 export const query = graphql`
-  query LoadVaporizers {
-    allProduct(filter: { type: { eq: "Concentrate" } }) {
+  query LoadConcentrates {
+    allProduct(filter: { type: { eq: "Concentrates" } }) {
       edges {
         node {
           id
@@ -46,4 +46,4 @@ export const query = graphql`
   }
 `
 
-export default VaporizersPage
+export default ConcentratesPage
