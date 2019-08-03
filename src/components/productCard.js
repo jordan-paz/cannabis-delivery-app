@@ -14,6 +14,7 @@ const ProductCardPreview = styled.div`
   padding-top: 10px;
   min-height: 80px;
   white-space: pre-line;
+
   p {
     overflow: hidden;
   }
@@ -29,9 +30,11 @@ const StyledAddToCartButton = styled.button`
   display: flex;
   align-items: center;
   font-size: 15px;
-  background-color: #ddd;
-  border-radius: 5px;
-  padding: 10px 20px;
+  background-color: #eee;
+  color: var(--primary-color);
+  border-radius: 25px;
+  padding: 10px 25px;
+  width: 110px;
   :hover {
     cursor: pointer;
   }
@@ -39,9 +42,9 @@ const StyledAddToCartButton = styled.button`
     outline: 0;
   }
   span {
-    padding-left: 15px;
     font-size: 15px;
     font-weight: bold;
+    padding-left: 15px;
   }
   img {
     max-width: 20px;
@@ -59,18 +62,19 @@ const ProductCard = ({ node: { name, type, thc, id, image, variants } }) => {
   const { url } = image
   const { price } = variants[0]
   return (
-    <Link to={`products/${id}`}>
-      <Card>
-        <CardContent>
+    <Card>
+      <CardContent>
+        <Link to={`products/${id}`}>
           <ProductCardImg src={url ? url : weed} />
+
           <ProductCardPreview>
             <ProductCardName>{name}</ProductCardName>
             {thc ? <p>"THC:" + thc + "%" </p> : null}
           </ProductCardPreview>
-          <AddToCartButton price={price} productId={id} />
-        </CardContent>
-      </Card>
-    </Link>
+        </Link>
+        <AddToCartButton price={price} productId={id} />
+      </CardContent>
+    </Card>
   )
 }
 

@@ -3,14 +3,14 @@ import React from "react"
 import styled from "styled-components"
 
 const ShopHeaderWrapper = styled.header`
-margin-top: 60px;
+margin-top: 110px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   left: 0;
   right: 0;
-  height: 180px;
+  height: 80px;
   small {
     margin: 3px;
   }
@@ -39,7 +39,6 @@ const ShopHeader = ({ category }) => (
           </Link>
           /<small>{category}</small>
         </nav>
-        <ShopHeaderTitle>{category}</ShopHeaderTitle>
       </ShopHeaderContent>
     </ShopHeaderWrapper>
   </div>

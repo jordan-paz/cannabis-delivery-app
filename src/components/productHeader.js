@@ -3,7 +3,8 @@ import React from "react"
 import styled from "styled-components"
 
 const ProductHeaderWrapper = styled.header`
-  margin-top: 60px;
+  
+margin-top: 110px;
   padding-top: 30px;
   padding-left: 10px;
   display: flex;

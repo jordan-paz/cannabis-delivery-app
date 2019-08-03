@@ -1,10 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import weed from "../images/can.jpg"
 import ProductHeader from "../components/productHeader"
-import addToCartIcon from "../images/add-to-cart.svg"
+import addToCartIconWhite from "../images/add-to-cart-white.svg"
 
 const Main = styled.main`
   display: flex;
@@ -38,7 +38,8 @@ const StyledAddToCartButton = styled.button`
   flex-direction: row;
   margin: 40px 10px 0 10px;
   font-size: 15px;
-  background-color: #ddd;
+  background-color: var(--primary-color);
+  color: #fff;
   border-radius: 5px;
   padding: 10px 30px;
   width: 90vw;
@@ -65,7 +66,7 @@ const AddToCartButtonPrice = styled.span``
 
 const AddToCartButton = ({ price, productId }) => (
   <StyledAddToCartButton>
-    <AddToCartButtonCart src={addToCartIcon} />
+    <AddToCartButtonCart src={addToCartIconWhite} />
     <AddToCartButtonText>Add to Cart</AddToCartButtonText>
     <AddToCartButtonPrice>${price}</AddToCartButtonPrice>
   </StyledAddToCartButton>
