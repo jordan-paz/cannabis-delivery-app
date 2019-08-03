@@ -33,17 +33,20 @@ const ProductImg = styled.img`
 `
 
 const StyledAddToCartButton = styled.button`
+  position: fixed;
+  bottom: 0;
+
   border: none;
   display: flex;
   flex-direction: row;
-  margin: 40px 10px 0 10px;
+  margin: 20px auto;
   font-size: 15px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: #fff;
-  border-radius: 5px;
+  border-radius: 40px;
   padding: 10px 30px;
   width: 90vw;
-  height: 80px;
+  height: 60px;
   :hover {
     cursor: pointer;
   }

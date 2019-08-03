@@ -1,14 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-
 import Drawer from "@material-ui/core/Drawer"
 import List from "@material-ui/core/List"
-import Divider from "@material-ui/core/Divider"
 import ListItem from "@material-ui/core/ListItem"
-import ListItemText from "@material-ui/core/ListItemText"
 import Bars from "../images/menu-bars.svg"
 import CloseX from "../images/close-x.svg"
+
+const StyledDrawer = styled(Drawer)`
+  .MuiPaper-root {
+    background-color: var(--secondary-color);
+    color: #fff;
+  }
+`
 
 const BarsWrapper = styled.div`
   margin-left: 1rem;
@@ -32,6 +36,8 @@ const StyledCloseNavButton = styled.button`
   display: flex;
   align-items: center;
   font-size: 15px;
+  background-color: var(--secondary-color);
+  color: #fff;
   :hover {
     cursor: pointer;
   }
@@ -53,6 +59,7 @@ const StyledListSpan = styled.span`
   margin: 6px 0;
   font-weight: bold;
   font-size: 20px;
+  color: #fff;
 `
 
 export default function TemporaryDrawer() {
@@ -115,10 +122,10 @@ export default function TemporaryDrawer() {
   return (
     <div>
       <NavToggleButton />
-      <Drawer open={open} onClose={toggleDrawer(false)}>
+      <StyledDrawer open={open} onClose={toggleDrawer(false)}>
         <CloseNavButton />
         <MenuList />
-      </Drawer>
+      </StyledDrawer>
     </div>
   )
 }

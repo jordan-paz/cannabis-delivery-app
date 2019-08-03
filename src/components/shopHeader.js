@@ -24,11 +24,6 @@ const ShopHeaderContent = styled.div`
   }
 `
 
-const ShopHeaderTitle = styled.h1`
-  margin: 0;
-  margin-top: 20px;
-`
-
 const ShopHeader = ({ category }) => (
   <div>
     <ShopHeaderWrapper>

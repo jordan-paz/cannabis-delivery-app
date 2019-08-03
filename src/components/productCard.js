@@ -3,8 +3,8 @@ import styled from "styled-components"
 import weed from "../images/can.jpg"
 import { Card } from "@material-ui/core"
 import CardContent from "@material-ui/core/CardContent"
-import { Link } from "gatsby"
 import addToCartIcon from "../images/add-to-cart.svg"
+import { navigate } from "@reach/router"
 
 const ProductCardImg = styled.img`
   max-width: 100%;
@@ -23,6 +23,13 @@ const ProductCardPreview = styled.div`
 const ProductCardName = styled.span`
   font-size: 15px;
   font-weight: bold;
+  color: var(--primary-color);
+`
+
+const ProductContent = styled.a`
+  :hover {
+    cursor: pointer;
+  }
 `
 
 const StyledAddToCartButton = styled.button`
@@ -30,8 +37,8 @@ const StyledAddToCartButton = styled.button`
   display: flex;
   align-items: center;
   font-size: 15px;
-  background-color: #eee;
-  color: var(--primary-color);
+  background-color: #f2f1ed;
+  color: var(--secondary-color);
   border-radius: 25px;
   padding: 10px 25px;
   width: 110px;
@@ -64,14 +71,13 @@ const ProductCard = ({ node: { name, type, thc, id, image, variants } }) => {
   return (
     <Card>
       <CardContent>
-        <Link to={`products/${id}`}>
+        <ProductContent onClick={() => navigate(`products/${id}`)}>
           <ProductCardImg src={url ? url : weed} />
-
           <ProductCardPreview>
             <ProductCardName>{name}</ProductCardName>
             {thc ? <p>"THC:" + thc + "%" </p> : null}
           </ProductCardPreview>
-        </Link>
+        </ProductContent>
         <AddToCartButton price={price} productId={id} />
       </CardContent>
     </Card>

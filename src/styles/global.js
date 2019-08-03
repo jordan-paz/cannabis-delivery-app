@@ -15,9 +15,9 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
 
     --bg-color: #FFFFFF;
-    --primary-color: #41ABD8;
-    --secondary-color: #011627;
-    --tertiary-color: #F71735;
+    --primary-color: #193F00;
+    --secondary-color: #359100;
+    --tertiary-color: #D3397E;
   }
   html, body {
     width: 100%;
@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: #000;
+    color: var(--secondary-color);
   }
   h3 {
     margin: 0;

@@ -5,7 +5,7 @@ const LocationBannerWrapper = styled.div`
   display: flex;
   width: 100%;
   height: 50px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 
   justify-content: center;
   align-items: center;

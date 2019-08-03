@@ -13,7 +13,7 @@ const StyledRegisterButton = styled.button`
   justify-items: center;
   font-size: 17px;
   font-weight: bold;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: #fff;
   border-radius: 32px;
   padding: 20px 20px;

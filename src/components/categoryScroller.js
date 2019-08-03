@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import ProductCard from "./productCard"
-import { Link } from "gatsby"
 import arrow from "../images/arrow.svg"
+import { navigate } from "@reach/router"
 
 const CategoryScrollerSection = styled.section`
   display: flex;
@@ -10,7 +10,8 @@ const CategoryScrollerSection = styled.section`
   flex-direction: column;
   width: 97%;
   padding-bottom: 2rem;
-  border-bottom: solid 1px #e9ede3;
+  border-bottom: solid 2px #ddd;
+  color: var(--primary-color);
 `
 
 const ScrollerHeader = styled.header`
@@ -24,18 +25,20 @@ const ScrollerHeaderTitle = styled.h1`
   font-size: 35px;
   justify-self: flex-start;
   padding-left: 2px;
-  color: #001e38;
 `
 
 const ScrollerHeaderLink = styled.span`
   display: flex;
   align-items: center;
-  color: var(--primary-color);
+  color: var(--secondary-color);
 `
 
 const ScrollerHeaderLinkWrapper = styled.span`
   margin-left: auto;
   padding-right: 15px;
+  :hover {
+    cursor: pointer;
+  }
 `
 
 const ScrollerWrapper = styled.div`
@@ -55,11 +58,11 @@ const CategoryScroller = ({ products, title }) => {
       <ScrollerHeader>
         <ScrollerHeaderTitle>{title}</ScrollerHeaderTitle>
         <ScrollerHeaderLinkWrapper>
-          <Link to={`${title.toLowerCase()}`}>
+          <a onClick={() => navigate(`${title.toLowerCase()}`)}>
             <ScrollerHeaderLink>
-              <b>View All</b> <img src={arrow} />
+              <b>VIEW ALL</b> <img src={arrow} />
             </ScrollerHeaderLink>
-          </Link>
+          </a>
         </ScrollerHeaderLinkWrapper>
       </ScrollerHeader>
       <ScrollerWrapper>

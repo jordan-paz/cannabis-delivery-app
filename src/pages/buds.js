@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import ShopHeader from "../components/shopHeader"
 import SEO from "../components/seo"
 import Catalog from "../components/catalog"
+import RegisterButton from "../components/registerButton"
 
 const BudsPage = ({
   data: {
@@ -15,6 +16,7 @@ const BudsPage = ({
       <SEO title="Buds" />
       <ShopHeader category="Buds" />
       <Catalog edges={edges} />
+      <RegisterButton />
     </Layout>
   )
 }
