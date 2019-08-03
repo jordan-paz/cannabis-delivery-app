@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Hero from "../components/hero"
+import RegisterButton from "../components/registerButton"
 import CategoryScroller from "../components/categoryScroller"
 import MainWrapper from "../components/mainWrapper"
 import SEO from "../components/seo"
@@ -18,8 +18,8 @@ const IndexPage = ({
   return (
     <Layout>
       <SEO title="Home" />
-      <Hero />
       <MainWrapper>
+        <RegisterButton />
         <CategoryScroller title={"Buds"} products={buds} />
         <CategoryScroller title={"Vaporizers"} products={buds} />
         <CategoryScroller title={"Edibles"} products={buds} />

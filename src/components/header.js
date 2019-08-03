@@ -4,15 +4,15 @@ import React from "react"
 import styled from "styled-components"
 import DrawerMenu from "./drawerMenu"
 import shoppingCart from "../images/shopping-cart.svg"
+import LocationBanner from "../components/locationBanner"
 
 const HeaderWrapper = styled.header`
-  background: white;
-  color: #333;
   position: fixed;
   left: 0;
   right: 0;
   height: 60px;
   top: 0;
+  background-color: var(--bg-color);
 `
 
 const HeaderContent = styled.div`
@@ -24,8 +24,8 @@ const HeaderContent = styled.div`
   align-items: center;
 `
 
-const HeaderLogo = styled.div`
-  max-height: 100%;
+const HeaderLogo = styled.h2`
+  color: var(--primary-color);
 `
 
 const ShoppingCart = styled.img`
@@ -34,19 +34,22 @@ const ShoppingCart = styled.img`
 `
 
 const Header = () => (
-  <HeaderWrapper>
-    <HeaderContent>
-      <DrawerMenu />
-      <HeaderLogo>
+  <>
+    <HeaderWrapper>
+      <HeaderContent>
+        <DrawerMenu />
         <Link to="/">
-          <h3>
-            <b>SCD</b>
-          </h3>
+          <HeaderLogo>
+            <b>
+              <i>-SCD-</i>
+            </b>
+          </HeaderLogo>
         </Link>
-      </HeaderLogo>
-      <ShoppingCart src={shoppingCart} />
-    </HeaderContent>
-  </HeaderWrapper>
+        <ShoppingCart src={shoppingCart} />
+      </HeaderContent>
+      <LocationBanner />
+    </HeaderWrapper>
+  </>
 )
 
 Header.propTypes = {

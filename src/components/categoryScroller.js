@@ -10,7 +10,7 @@ const CategoryScrollerSection = styled.section`
   flex-direction: column;
   width: 97%;
   padding-bottom: 2rem;
-  border-bottom: solid 1px #ddd;
+  border-bottom: solid 1px #e9ede3;
 `
 
 const ScrollerHeader = styled.header`
@@ -20,14 +20,19 @@ const ScrollerHeader = styled.header`
   align-items: center;
 `
 
-const ScrollerHeaderTitle = styled.h2`
+const ScrollerHeaderTitle = styled.h1`
+  font-size: 35px;
   justify-self: flex-start;
   padding-left: 2px;
+  color: #001e38;
 `
+
 const ScrollerHeaderLink = styled.span`
   display: flex;
   align-items: center;
+  color: var(--primary-color);
 `
+
 const ScrollerHeaderLinkWrapper = styled.span`
   margin-left: auto;
   padding-right: 15px;
@@ -52,7 +57,7 @@ const CategoryScroller = ({ products, title }) => {
         <ScrollerHeaderLinkWrapper>
           <Link to={`${title.toLowerCase()}`}>
             <ScrollerHeaderLink>
-              View All <img src={arrow} />
+              <b>View All</b> <img src={arrow} />
             </ScrollerHeaderLink>
           </Link>
         </ScrollerHeaderLinkWrapper>
