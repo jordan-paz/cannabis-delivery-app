@@ -22,6 +22,7 @@ const BarsWrapper = styled.div`
 
 const StyledNavBarButton = styled.button`
   border: none;
+  background-color: #fff;
   :hover {
     cursor: pointer;
   }
