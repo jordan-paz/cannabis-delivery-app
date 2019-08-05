@@ -35,7 +35,6 @@ const ProductImg = styled.img`
 const StyledAddToCartButton = styled.button`
   position: fixed;
   bottom: 0;
-
   border: none;
   display: flex;
   flex-direction: row;

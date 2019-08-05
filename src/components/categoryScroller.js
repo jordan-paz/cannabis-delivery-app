@@ -11,7 +11,7 @@ const CategoryScrollerSection = styled.section`
   width: 97%;
   padding-bottom: 2rem;
   border-bottom: solid 2px #ddd;
-  color: var(--primary-color);
+  color: var(--black);
 `
 
 const ScrollerHeader = styled.header`
@@ -25,12 +25,15 @@ const ScrollerHeaderTitle = styled.h1`
   font-size: 35px;
   justify-self: flex-start;
   padding-left: 2px;
+  border-bottom: 6px solid var(--primary-color);
+  border-length: 20px;
+  line-height: 50px;
 `
 
 const ScrollerHeaderLink = styled.span`
   display: flex;
   align-items: center;
-  color: var(--secondary-color);
+  color: var(--black);
 `
 
 const ScrollerHeaderLinkWrapper = styled.span`
@@ -48,8 +51,8 @@ const ScrollerWrapper = styled.div`
   width: 100%;
   padding: 2px;
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(5, calc(40%));
+  grid-gap: 15px;
+  grid-template-columns: repeat(10, calc(40%));
 `
 
 const CategoryScroller = ({ products, title }) => {

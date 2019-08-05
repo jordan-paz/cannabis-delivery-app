@@ -28,12 +28,9 @@ const ShopHeader = ({ category }) => (
   <div>
     <ShopHeaderWrapper>
       <ShopHeaderContent>
-        <nav>
-          <Link to="/">
-            <small>Home</small>
-          </Link>
-          /<small>{category}</small>
-        </nav>
+        <Link to="/">
+          <small>Back</small>
+        </Link>
       </ShopHeaderContent>
     </ShopHeaderWrapper>
   </div>

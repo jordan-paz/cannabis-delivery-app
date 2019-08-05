@@ -5,12 +5,12 @@ import Drawer from "@material-ui/core/Drawer"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import Bars from "../images/menu-bars.svg"
-import CloseX from "../images/close-x.svg"
+import CloseX from "../images/close-x-black.svg"
 
 const StyledDrawer = styled(Drawer)`
   .MuiPaper-root {
-    background-color: var(--secondary-color);
-    color: #fff;
+    background-color: #fff;
+    color: var(--black);
   }
 `
 
@@ -36,8 +36,7 @@ const StyledCloseNavButton = styled.button`
   display: flex;
   align-items: center;
   font-size: 15px;
-  background-color: var(--secondary-color);
-  color: #fff;
+  color: var(--black);
   :hover {
     cursor: pointer;
   }
@@ -59,7 +58,7 @@ const StyledListSpan = styled.span`
   margin: 6px 0;
   font-weight: bold;
   font-size: 20px;
-  color: #fff;
+  color: var(--black);
 `
 
 export default function TemporaryDrawer() {

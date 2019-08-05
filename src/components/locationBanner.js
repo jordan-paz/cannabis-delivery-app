@@ -4,21 +4,25 @@ import styled from "styled-components"
 const LocationBannerWrapper = styled.div`
   display: flex;
   width: 100%;
-  height: 50px;
-  background-color: var(--secondary-color);
-
+  height: 40px;
+  background-color: #fff;
   justify-content: center;
   align-items: center;
+  border-bottom: 1.6px solid var(--grey);
+  border-top: 1.6px solid var(--grey);
 `
 
 const StyledAnnouncement = styled.p`
-  color: #fff;
+  color: var(--black);
+  font-size: 15px;
 `
 
 const LocationBanner = () => {
   return (
     <LocationBannerWrapper>
-      <StyledAnnouncement>Location goes here</StyledAnnouncement>
+      <StyledAnnouncement>
+        Delivery to <b>3949 Orange Grove Ave</b>
+      </StyledAnnouncement>
     </LocationBannerWrapper>
   )
 }

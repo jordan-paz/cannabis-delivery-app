@@ -5,12 +5,13 @@ import styled from "styled-components"
 import DrawerMenu from "./drawerMenu"
 import shoppingCart from "../images/shopping-cart.svg"
 import LocationBanner from "../components/locationBanner"
+import CartModal from "../components/cartModal"
 
 const HeaderWrapper = styled.header`
   position: fixed;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 45px;
   top: 0;
   background-color: var(--bg-color);
 `
@@ -28,11 +29,6 @@ const HeaderLogo = styled.h2`
   color: var(--primary-color);
 `
 
-const ShoppingCart = styled.img`
-  margin-right: 1rem;
-  max-height: 100%;
-`
-
 const Header = () => (
   <>
     <HeaderWrapper>
@@ -40,12 +36,10 @@ const Header = () => (
         <DrawerMenu />
         <Link to="/">
           <HeaderLogo>
-            <b>
-              <i>-SCD-</i>
-            </b>
+            <b>SCD</b>
           </HeaderLogo>
         </Link>
-        <ShoppingCart src={shoppingCart} />
+        <CartModal />
       </HeaderContent>
       <LocationBanner />
     </HeaderWrapper>

@@ -15,9 +15,11 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
 
     --bg-color: #FFFFFF;
-    --primary-color: #193F00;
-    --secondary-color: #359100;
+    --primary-color: #FF3008;
+    --secondary-color: #FF3008;
     --tertiary-color: #D3397E;
+    --black: #181919;
+    --grey: #DDD;
   }
   html, body {
     width: 100%;
