@@ -17,7 +17,6 @@ const CategoryScrollerSection = styled.section`
 const ScrollerHeader = styled.header`
   display: flex;
   width: 100%;
-  margin-top: 40px;
   align-items: center;
 `
 
@@ -52,7 +51,7 @@ const ScrollerWrapper = styled.div`
   padding: 2px;
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: repeat(10, calc(40%));
+  grid-template-columns: repeat(10, calc(42%));
 `
 
 const CategoryScroller = ({ products, title }) => {

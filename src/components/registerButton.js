@@ -6,7 +6,7 @@ const StyledRegisterButton = styled.button`
   position: fixed;
   bottom: 0;
   right: 0;
-  margin: 20px;
+  margin: 10px;
   border: none;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@ const StyledRegisterButton = styled.button`
   font-weight: bold;
   background-color: var(--secondary-color);
   color: #fff;
-  border-radius: 32px;
+  border-radius: 5px;
   padding: 20px 20px;
   width: 200px;
   :hover {

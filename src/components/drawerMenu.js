@@ -38,6 +38,7 @@ const StyledCloseNavButton = styled.button`
   align-items: center;
   font-size: 15px;
   color: var(--black);
+  background-color: #fff;
   :hover {
     cursor: pointer;
   }
