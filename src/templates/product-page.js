@@ -42,7 +42,7 @@ const StyledAddToCartButton = styled.button`
   font-size: 15px;
   background-color: var(--secondary-color);
   color: #fff;
-  border-radius: 40px;
+  border-radius: 5px;
   padding: 10px 30px;
   width: 90vw;
   height: 60px;

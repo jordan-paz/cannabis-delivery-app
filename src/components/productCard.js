@@ -10,7 +10,7 @@ const StyledCard = styled(Card)`
   .MuiCardContent-root {
     padding: 0;
   }
-  max-width: 300px;
+  max-width: 330px;
 `
 
 const ProductCardImg = styled.img`
@@ -18,7 +18,7 @@ const ProductCardImg = styled.img`
 `
 
 const ProductCardPreview = styled.div`
-  padding: 10px;
+  padding: 5px 15px 10px 15px;
   min-height: 60px;
   white-space: pre-line;
 
@@ -41,15 +41,14 @@ const ProductContent = styled.a`
 
 const StyledAddToCartButton = styled.button`
   border: 2px solid var(--grey);
-  margin: 10px auto;
+  margin: 0 10px 10px 10px;
+  align-content: center;
   display: flex;
-  align-items: center;
-  font-size: 15px;
   background-color: #fff;
   color: var(--primary-color);
-  border-radius: 25px;
+  border-radius: 5px;
   padding: 15px 25px;
-  width: 80%;
+  width: 90%;
   :hover {
     cursor: pointer;
   }
@@ -57,12 +56,12 @@ const StyledAddToCartButton = styled.button`
     outline: 0;
   }
   span {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     margin: 0 auto;
   }
   img {
-    max-width: 20px;
+    max-width: 23px;
     margin: 0 auto;
   }
 `
