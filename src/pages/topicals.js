@@ -21,7 +21,7 @@ const TopicalsPage = ({
 
 export const query = graphql`
   query LoadTopicals {
-    allProduct(filter: { type: { eq: "Concentrate" } }) {
+    allProduct(filter: { category: { name: { eq: "Topical" } } }) {
       edges {
         node {
           id
@@ -39,6 +39,15 @@ export const query = graphql`
           variants {
             flavor
             price
+          }
+          type
+          category {
+            id
+            name
+          }
+          subCategory {
+            id
+            name
           }
         }
       }

@@ -12,6 +12,12 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               id
               type
+              category {
+                name
+              }
+              subCategory {
+                name
+              }
             }
           }
         }
@@ -24,7 +30,6 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create product pages.
     result.data.allProduct.edges.forEach(edge => {
-      console.log(edge.node)
       createPage({
         // Path for this page — required
         path: `products/${edge.node.id}`,
@@ -32,6 +37,8 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           id: `${edge.node.id}`,
           type: `${edge.node.type}`,
+          category: `${edge.node.category.name}`,
+          subCategory: `${edge.node.subCategory && edge.node.subCategory.name}`,
         },
       })
     })

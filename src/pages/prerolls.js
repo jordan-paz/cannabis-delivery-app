@@ -20,25 +20,31 @@ const PrerollsPage = ({
 }
 
 export const query = graphql`
-  query LoadPrerolls {
-    allProduct(filter: { type: { eq: "Concentrate" } }) {
+  query PreRolls {
+    allProduct(filter: { category: { name: { eq: "Pre-Roll" } } }) {
       edges {
         node {
-          id
-          name
-          brand {
+          type
+          category {
             name
           }
+          subCategory {
+            name
+          }
+          description
+          featured
+          id
           image {
             url
           }
-          strain {
-            indicaSativaRatio
-            name
-          }
+          name
           variants {
-            flavor
             price
+            productId
+            unitWeight
+            unit
+            flavor
+            description
           }
         }
       }

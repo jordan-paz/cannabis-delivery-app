@@ -21,24 +21,30 @@ const GearPage = ({
 
 export const query = graphql`
   query LoadGear {
-    allProduct(filter: { type: { eq: "Concentrate" } }) {
+    allProduct(filter: { category: { name: { eq: "Gear" } } }) {
       edges {
         node {
-          id
-          name
-          brand {
+          type
+          category {
             name
           }
+          subCategory {
+            name
+          }
+          description
+          featured
+          id
           image {
             url
           }
-          strain {
-            indicaSativaRatio
-            name
-          }
+          name
           variants {
-            flavor
             price
+            productId
+            unitWeight
+            unit
+            flavor
+            description
           }
         }
       }

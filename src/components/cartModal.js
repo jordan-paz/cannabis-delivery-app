@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { makeStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
 import Dialog from "@material-ui/core/Dialog"
-import ListItemText from "@material-ui/core/ListItemText"
 import ListItem from "@material-ui/core/ListItem"
 import List from "@material-ui/core/List"
 import Divider from "@material-ui/core/Divider"
@@ -95,7 +94,7 @@ export default function CartModal({ userId }) {
   return (
     <div>
       <StyledCartButton onClick={handleClickOpen}>
-        <img src={cartIcon} />
+        <img src={cartIcon} alt="cart" />
         <span>0</span>
       </StyledCartButton>
       <Dialog
@@ -115,7 +114,7 @@ export default function CartModal({ userId }) {
               onClick={handleClose}
               aria-label="close"
             >
-              <img src={CloseIcon} />
+              <img src={CloseIcon} alt="Close" />
             </IconButton>
           </Toolbar>
         </AppBar>

@@ -9,19 +9,27 @@ import { navigate } from "@reach/router"
 const StyledCard = styled(Card)`
   .MuiCardContent-root {
     padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  max-width: 330px;
 `
 
 const ProductCardImg = styled.img`
   max-width: 100%;
 `
 
+const ProductCardImgWrapper = styled.div`
+  display: flex;
+  align-content: center;
+  overflow: hidden;
+`
+
 const ProductCardPreview = styled.div`
   padding: 5px 15px 10px 15px;
   min-height: 60px;
   white-space: pre-line;
-
   p {
     overflow: hidden;
   }
@@ -31,12 +39,6 @@ const ProductCardName = styled.span`
   font-size: 15px;
   font-weight: bold;
   color: var(--black);
-`
-
-const ProductContent = styled.a`
-  :hover {
-    cursor: pointer;
-  }
 `
 
 const StyledAddToCartButton = styled.button`
@@ -68,7 +70,7 @@ const StyledAddToCartButton = styled.button`
 
 const AddToCartButton = ({ price, productId }) => (
   <StyledAddToCartButton>
-    <img src={addToCartIcon} />
+    <img src={addToCartIcon} alt="Add to cart" />
     <span>${price}</span>
   </StyledAddToCartButton>
 )
@@ -79,14 +81,19 @@ const ProductCard = ({ node: { name, type, thc, id, image, variants } }) => {
   return (
     <StyledCard>
       <CardContent>
-        <ProductContent onClick={() => navigate(`products/${id}`)}>
-          <ProductCardImg src={url ? url : weed} />
+        <ProductCardImgWrapper>
+          <ProductCardImg
+            src={url ? url : weed}
+            onClick={() => navigate(`products/${id}`)}
+          />
+        </ProductCardImgWrapper>
+        <div>
           <ProductCardPreview>
             <ProductCardName>{name}</ProductCardName>
             {thc ? <p>"THC:" + thc + "%" </p> : null}
           </ProductCardPreview>
-        </ProductContent>
-        <AddToCartButton price={price} productId={id} />
+          <AddToCartButton price={price} productId={id} />
+        </div>
       </CardContent>
     </StyledCard>
   )

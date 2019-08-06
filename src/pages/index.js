@@ -12,21 +12,37 @@ const IndexPage = ({
     allProduct: { edges },
   },
 }) => {
-  const concentrates = edges.filter(edge => edge.node.type === "Concentrate")
-  const buds = edges.filter(edge => edge.node.type === "Buds")
+  const flower = edges.filter(
+    edge => edge.node.category.name === "Pre-Packaged"
+  )
+
+  const cartridges = edges.filter(
+    edge => edge.node.category.name === "Cartridge"
+  )
+
+  const edibles = edges.filter(edge => edge.node.category.name === "Edible")
+
+  const concentrates = edges.filter(
+    edge =>
+      edge.node.category.name === "Wax" ||
+      edge.node.category.name === "Live-Resin"
+  )
+
+  const topicals = edges.filter(edge => edge.node.category.name === "Topical")
+
+  const gear = edges.filter(edge => edge.node.category.name === "Gear")
 
   return (
     <Layout>
       <SEO title="Home" />
       <MainWrapper>
         <RegisterButton />
-        <CategoryScroller title={"Buds"} products={buds} />
-        <CategoryScroller title={"Vaporizers"} products={buds} />
-        <CategoryScroller title={"Edibles"} products={buds} />
-        <CategoryScroller title={"Concentrates"} products={buds} />
-        <CategoryScroller title={"Topicals"} products={buds} />
-        <CategoryScroller title={"Tinctures"} products={buds} />
-        <CategoryScroller title={"Gear"} products={buds} />
+        <CategoryScroller title={"Flower"} products={flower} />
+        <CategoryScroller title={"Vape-Cartridges"} products={cartridges} />
+        <CategoryScroller title={"Edibles"} products={edibles} />
+        <CategoryScroller title={"Concentrates"} products={concentrates} />
+        <CategoryScroller title={"Tinctures & Topicals"} products={topicals} />
+        <CategoryScroller title={"Gear"} products={gear} />
       </MainWrapper>
     </Layout>
   )
@@ -54,6 +70,14 @@ export const query = graphql`
             price
           }
           type
+          category {
+            id
+            name
+          }
+          subCategory {
+            id
+            name
+          }
         }
       }
     }
