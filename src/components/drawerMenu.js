@@ -79,7 +79,7 @@ export default function TemporaryDrawer() {
   const NavToggleButton = () => (
     <BarsWrapper>
       <StyledNavBarButton onClick={toggleDrawer(true)}>
-        <img src={Bars} />
+        <img src={Bars} alt="collapsed nav menu" />
       </StyledNavBarButton>
     </BarsWrapper>
   )
@@ -89,7 +89,7 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
-      <img src={CloseX} />
+      <img src={CloseX} alt="Close menu" />
       <span>CLOSE</span>
     </StyledCloseNavButton>
   )

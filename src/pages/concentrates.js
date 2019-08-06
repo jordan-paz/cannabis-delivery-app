@@ -20,25 +20,35 @@ const ConcentratesPage = ({
 }
 
 export const query = graphql`
-  query LoadConcentrates {
-    allProduct(filter: { type: { eq: "Concentrates" } }) {
+  query loadConcentrates {
+    allProduct(
+      filter: {
+        subCategory: { name: { in: ["Sauce", "Crumble", "Applicator"] } }
+      }
+    ) {
       edges {
         node {
-          id
-          name
-          brand {
+          type
+          category {
             name
           }
+          subCategory {
+            name
+          }
+          description
+          featured
+          id
           image {
             url
           }
-          strain {
-            indicaSativaRatio
-            name
-          }
+          name
           variants {
-            flavor
             price
+            productId
+            unitWeight
+            unit
+            flavor
+            description
           }
         }
       }

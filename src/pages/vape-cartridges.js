@@ -5,40 +5,46 @@ import ShopHeader from "../components/shopHeader"
 import SEO from "../components/seo"
 import Catalog from "../components/catalog"
 
-const VaporizersPage = ({
+const VapeCartridgesPage = ({
   data: {
     allProduct: { edges },
   },
 }) => {
   return (
     <Layout>
-      <SEO title="Vaporizers" />
-      <ShopHeader category="Vaporizers" />
+      <SEO title="VapeCartridges" />
+      <ShopHeader category="VapeCartridges" />
       <Catalog edges={edges} />
     </Layout>
   )
 }
 
 export const query = graphql`
-  query LoadVaporizers {
-    allProduct(filter: { type: { eq: "Concentrate" } }) {
+  query LoadCartridges {
+    allProduct(filter: { category: { name: { eq: "Cartridge" } } }) {
       edges {
         node {
-          id
-          name
-          brand {
+          type
+          category {
             name
           }
+          subCategory {
+            name
+          }
+          description
+          featured
+          id
           image {
             url
           }
-          strain {
-            indicaSativaRatio
-            name
-          }
+          name
           variants {
-            flavor
             price
+            productId
+            unitWeight
+            unit
+            flavor
+            description
           }
         }
       }
@@ -46,4 +52,4 @@ export const query = graphql`
   }
 `
 
-export default VaporizersPage
+export default VapeCartridgesPage

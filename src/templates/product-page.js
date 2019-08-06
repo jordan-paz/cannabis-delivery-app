@@ -95,20 +95,27 @@ const ProductPage = ({ data: { product } }) => {
 export const query = graphql`
   query($id: String!) {
     product(id: { eq: $id }) {
-      name
       type
-      image {
-        url
+      category {
+        name
       }
-      brand {
+      subCategory {
         name
       }
       description
+      featured
+      id
+      image {
+        url
+      }
+      name
       variants {
-        flavor
         price
+        productId
         unitWeight
         unit
+        flavor
+        description
       }
     }
   }

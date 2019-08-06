@@ -22,7 +22,7 @@ exports.sourceNodes = (
     return nodeData
   }
   // Join apiOptions with the Pixabay API URL
-  const apiUrl = `https://app.webjoint.com/prod/api/products/active?facilityId=51 `
+  const apiUrl = `https://app.webjoint.com/prod/api/products/active?facilityId=51&range=[0,5000]`
   // Gatsby expects sourceNodes to return a promise
   return (
     // Fetch a response from the apiUrl

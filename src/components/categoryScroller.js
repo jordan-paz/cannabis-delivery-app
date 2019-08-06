@@ -32,7 +32,10 @@ const ScrollerHeaderTitle = styled.h1`
 const ScrollerHeaderLink = styled.span`
   display: flex;
   align-items: center;
-  color: var(--black);
+  color: var(--primary-color);
+  img {
+    margin-left: 10px;
+  }
 `
 
 const ScrollerHeaderLinkWrapper = styled.span`
@@ -60,11 +63,11 @@ const CategoryScroller = ({ products, title }) => {
       <ScrollerHeader>
         <ScrollerHeaderTitle>{title}</ScrollerHeaderTitle>
         <ScrollerHeaderLinkWrapper>
-          <a onClick={() => navigate(`${title.toLowerCase()}`)}>
-            <ScrollerHeaderLink>
-              <b>VIEW ALL</b> <img src={arrow} />
-            </ScrollerHeaderLink>
-          </a>
+          <ScrollerHeaderLink
+            onClick={() => navigate(`${title.toLowerCase()}`)}
+          >
+            <b>VIEW ALL</b> <img src={arrow} alt="Arrow" />
+          </ScrollerHeaderLink>
         </ScrollerHeaderLinkWrapper>
       </ScrollerHeader>
       <ScrollerWrapper>

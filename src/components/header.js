@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import DrawerMenu from "./drawerMenu"
-import shoppingCart from "../images/shopping-cart.svg"
 import LocationBanner from "../components/locationBanner"
 import CartModal from "../components/cartModal"
 

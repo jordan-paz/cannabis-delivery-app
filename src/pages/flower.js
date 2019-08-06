@@ -6,15 +6,15 @@ import SEO from "../components/seo"
 import Catalog from "../components/catalog"
 import RegisterButton from "../components/registerButton"
 
-const BudsPage = ({
+const FlowerPage = ({
   data: {
     allProduct: { edges },
   },
 }) => {
   return (
     <Layout>
-      <SEO title="Buds" />
-      <ShopHeader category="Buds" />
+      <SEO title="Flower" />
+      <ShopHeader category="Flower" />
       <Catalog edges={edges} />
       <RegisterButton />
     </Layout>
@@ -22,25 +22,31 @@ const BudsPage = ({
 }
 
 export const query = graphql`
-  query LoadBuds {
-    allProduct(filter: { type: { eq: "Buds" } }) {
+  query LoadFlower {
+    allProduct(filter: { category: { name: { eq: "Pre-Packaged" } } }) {
       edges {
         node {
-          id
-          name
-          brand {
+          type
+          category {
             name
           }
+          subCategory {
+            name
+          }
+          description
+          featured
+          id
           image {
             url
           }
-          strain {
-            indicaSativaRatio
-            name
-          }
+          name
           variants {
-            flavor
             price
+            productId
+            unitWeight
+            unit
+            flavor
+            description
           }
         }
       }
@@ -48,4 +54,4 @@ export const query = graphql`
   }
 `
 
-export default BudsPage
+export default FlowerPage

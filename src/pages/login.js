@@ -59,9 +59,7 @@ const Login = () => {
 
       <div>
         <button type="button">Cancel</button>
-        <span>
-          Forgot <a href="#">password?</a>
-        </span>
+        <span>Forgot password?</span>
       </div>
     </form>
   )

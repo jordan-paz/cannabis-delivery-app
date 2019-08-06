@@ -38,7 +38,7 @@ const StyledRegisterButton = styled.button`
 const RegisterButton = () => {
   return (
     <StyledRegisterButton>
-      <img src={ResgisterIcon} />
+      <img src={ResgisterIcon} alt="Register" />
       <span>JOIN THE CLUB</span>
     </StyledRegisterButton>
   )

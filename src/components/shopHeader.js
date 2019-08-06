@@ -36,7 +36,7 @@ const ShopHeader = ({ category }) => (
     <ShopHeaderWrapper>
       <ShopHeaderContent>
         <StyledLink to="/">
-          <img src={backArrow} />
+          <img src={backArrow} alt="Backwards arrow" />
           <span>
             <b>BACK</b>
           </span>
