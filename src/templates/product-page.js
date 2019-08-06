@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import weed from "../images/can.jpg"
-import ProductHeader from "../components/productHeader"
 import addToCartIconWhite from "../images/add-to-cart-white.svg"
+import BackButton from "../components/backButton"
 
 const Main = styled.main`
   display: flex;
@@ -79,8 +79,8 @@ const ProductPage = ({ data: { product } }) => {
 
   return (
     <Layout>
-      <ProductHeader category={product.type} name={product.name} />
       <Main>
+        <BackButton />
         <MainContent>
           <ProductImg src={product.image.url ? product.image.url : weed} />
           <h1>{product.name}</h1>

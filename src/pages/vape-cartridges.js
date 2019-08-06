@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import ShopHeader from "../components/shopHeader"
+import BackButton from "../components/backButton"
 import SEO from "../components/seo"
 import Catalog from "../components/catalog"
 
@@ -13,7 +13,7 @@ const VapeCartridgesPage = ({
   return (
     <Layout>
       <SEO title="VapeCartridges" />
-      <ShopHeader category="VapeCartridges" />
+      <BackButton />
       <Catalog edges={edges} />
     </Layout>
   )
