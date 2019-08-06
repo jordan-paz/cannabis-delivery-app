@@ -18,12 +18,19 @@ const StyledCard = styled(Card)`
 
 const ProductCardImg = styled.img`
   max-width: 100%;
+  min-height: 170px;
+  max-height: 100%;
+  object-fit: cover;
 `
 
 const ProductCardImgWrapper = styled.div`
   display: flex;
   align-content: center;
-  overflow: hidden;
+  justify-content: center;
+  max-height: 220px;
+  :hover {
+    cursor: pointer;
+  }
 `
 
 const ProductCardPreview = styled.div`
@@ -32,6 +39,9 @@ const ProductCardPreview = styled.div`
   white-space: pre-line;
   p {
     overflow: hidden;
+  }
+  :hover {
+    cursor: pointer;
   }
 `
 
