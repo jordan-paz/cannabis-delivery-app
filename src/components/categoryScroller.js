@@ -64,7 +64,14 @@ const CategoryScroller = ({ products, title }) => {
         <ScrollerHeaderTitle>{title}</ScrollerHeaderTitle>
         <ScrollerHeaderLinkWrapper>
           <ScrollerHeaderLink
-            onClick={() => navigate(`${title.toLowerCase()}`)}
+            onClick={() =>
+              navigate(
+                `${title
+                  .split(" ")
+                  .join("")
+                  .toLowerCase()}`
+              )
+            }
           >
             <b>VIEW ALL</b> <img src={arrow} alt="Arrow" />
           </ScrollerHeaderLink>

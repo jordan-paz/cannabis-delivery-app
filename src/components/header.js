@@ -5,6 +5,7 @@ import styled from "styled-components"
 import DrawerMenu from "./drawerMenu"
 import LocationBanner from "../components/locationBanner"
 import CartModal from "../components/cartModal"
+import { AuthContext } from "../context/authContext"
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -29,20 +30,22 @@ const HeaderLogo = styled.h2`
 `
 
 const Header = () => (
-  <>
-    <HeaderWrapper>
-      <HeaderContent>
-        <DrawerMenu />
-        <Link to="/">
-          <HeaderLogo>
-            <b>SCD</b>
-          </HeaderLogo>
-        </Link>
-        <CartModal />
-      </HeaderContent>
-      <LocationBanner />
-    </HeaderWrapper>
-  </>
+  <AuthContext.Consumer>
+    {context => (
+      <HeaderWrapper>
+        <HeaderContent>
+          <DrawerMenu />
+          <Link to="/">
+            <HeaderLogo>
+              <b>SCD</b>
+            </HeaderLogo>
+          </Link>
+          {context.loggedIn ? <CartModal /> : <Link to={"/login"}>Login</Link>}
+        </HeaderContent>
+        <LocationBanner />
+      </HeaderWrapper>
+    )}
+  </AuthContext.Consumer>
 )
 
 Header.propTypes = {

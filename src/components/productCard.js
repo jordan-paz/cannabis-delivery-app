@@ -18,16 +18,12 @@ const StyledCard = styled(Card)`
 
 const ProductCardImg = styled.img`
   max-width: 100%;
-  min-height: 170px;
-  max-height: 100%;
-  object-fit: cover;
 `
 
 const ProductCardImgWrapper = styled.div`
   display: flex;
   align-content: center;
   justify-content: center;
-  max-height: 220px;
   :hover {
     cursor: pointer;
   }
