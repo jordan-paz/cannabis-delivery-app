@@ -67,6 +67,10 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `referer`,
+          content: `https://sacramentoconfidential.webjoint.com`,
+        },
       ].concat(meta)}
     />
   )

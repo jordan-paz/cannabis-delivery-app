@@ -2,29 +2,29 @@ import React, { useState } from "react"
 import axios from "axios"
 import { AuthContext } from "../context/authContext"
 
-const Login = () => {
+const Login = ({ history }) => {
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
 
   const onSubmit = (e, login) => {
     e.preventDefault()
-    console.log(email, password)
-    const config = {
+
+    fetch("https://app.webjoint.com/prod/api/users/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
+        Referer: "https://sacramentoconfidential.webjoint.com",
       },
-    }
-
-    const data = {
-      email: email,
-      password: password,
-    }
-
-    axios
-      .post("https://app.webjoint.com/prod/api/users/login", data, config)
+    })
       .then(function(response) {
         console.log(response)
         login()
+        history.push("/")
       })
       .catch(function(error) {
         console.log(error)

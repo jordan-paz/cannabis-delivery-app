@@ -17,7 +17,7 @@ const StyledCard = styled(Card)`
 `
 
 const ProductCardImg = styled.img`
-  max-width: 100%;
+  width: 100%;
 `
 
 const ProductCardImgWrapper = styled.div`
