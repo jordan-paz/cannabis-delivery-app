@@ -6,6 +6,7 @@ import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import Bars from "../images/menu-bars.svg"
 import CloseX from "../images/close-x-black.svg"
+import { AuthContext } from "../context/authContext"
 
 const StyledDrawer = styled(Drawer)`
   .MuiPaper-root {
@@ -95,29 +96,36 @@ export default function TemporaryDrawer() {
   )
 
   const MenuList = () => (
-    <StyledMenuList
-      role="navigation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
-        {[
-          "Buds",
-          "Vaporizers",
-          "Tinctures",
-          "Topicals",
-          "Edibles",
-          "Prerolls",
-          "Gear",
-        ].map(text => (
-          <Link to={`/${text.toLowerCase()}`} key={text}>
+    <AuthContext.Consumer>
+      {context => (
+        <StyledMenuList
+          role="navigation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+        >
+          <List>
+            {[
+              "Buds",
+              "Vaporizers",
+              "Tinctures",
+              "Topicals",
+              "Edibles",
+              "Prerolls",
+              "Gear",
+            ].map(text => (
+              <Link to={`/${text.toLowerCase()}`} key={text}>
+                <ListItem>
+                  <StyledListSpan>{text.toUpperCase()}</StyledListSpan>
+                </ListItem>
+              </Link>
+            ))}
             <ListItem>
-              <StyledListSpan>{text.toUpperCase()}</StyledListSpan>
+              <StyledListSpan onClick={context.logout}>logout</StyledListSpan>
             </ListItem>
-          </Link>
-        ))}
-      </List>
-    </StyledMenuList>
+          </List>
+        </StyledMenuList>
+      )}
+    </AuthContext.Consumer>
   )
 
   return (
