@@ -10,6 +10,16 @@ const CatalogWrapper = styled.main`
 `
 
 const Catalog = ({ edges }) => {
+  edges.sort((a, b) => {
+    if (a.node.name < b.node.name) {
+      return -1
+    }
+    if (a.node.name > b.node.name) {
+      return 1
+    }
+    return 0
+  })
+
   return (
     <CatalogWrapper>
       {edges.map(({ node }) => {

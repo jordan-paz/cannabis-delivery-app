@@ -14,6 +14,8 @@ import Typography from "@material-ui/core/Typography"
 import CloseIcon from "../images/close-x-white.svg"
 import Fade from "@material-ui/core/Fade"
 
+import { OrderContext } from "../context/orderContext"
+
 const StyledCheckoutButton = styled(Button)`
   position: fixed;
   bottom: 0;
@@ -92,39 +94,45 @@ export default function CartModal({ userId }) {
   }
 
   return (
-    <div>
-      <StyledCartButton onClick={handleClickOpen}>
-        <img src={cartIcon} alt="cart" />
-        <span>0</span>
-      </StyledCartButton>
-      <Dialog
-        fullScreen
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Transition}
-      >
-        <AppBar className={classes.appBar}>
-          <Toolbar>
-            <Typography variant="h6" className={classes.title}>
-              Your Cart
-            </Typography>
-            <IconButton
-              edge="start"
-              color="#inherit"
-              onClick={handleClose}
-              aria-label="close"
+    <OrderContext.Consumer>
+      {({ orderDetails }) => {
+        return (
+          <div>
+            <StyledCartButton onClick={handleClickOpen}>
+              <img src={cartIcon} alt="cart" />
+              <span>{orderDetails.length}</span>
+            </StyledCartButton>
+            <Dialog
+              fullScreen
+              open={open}
+              onClose={handleClose}
+              TransitionComponent={Transition}
             >
-              <img src={CloseIcon} alt="Close" />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <List>
-          <ListItem></ListItem>
-          <Divider />
-          <ListItem></ListItem>
-        </List>
-        <StyledCheckoutButton>Checkout</StyledCheckoutButton>
-      </Dialog>
-    </div>
+              <AppBar className={classes.appBar}>
+                <Toolbar>
+                  <Typography variant="h6" className={classes.title}>
+                    Your Cart
+                  </Typography>
+                  <IconButton
+                    edge="start"
+                    color="inherit"
+                    onClick={handleClose}
+                    aria-label="close"
+                  >
+                    <img src={CloseIcon} alt="Close" />
+                  </IconButton>
+                </Toolbar>
+              </AppBar>
+              <List>
+                <ListItem></ListItem>
+                <Divider />
+                <ListItem></ListItem>
+              </List>
+              <StyledCheckoutButton>Checkout</StyledCheckoutButton>
+            </Dialog>
+          </div>
+        )
+      }}
+    </OrderContext.Consumer>
   )
 }
