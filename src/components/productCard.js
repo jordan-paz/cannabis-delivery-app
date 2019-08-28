@@ -51,7 +51,7 @@ const ProductCardName = styled.span`
 const ProductCard = ({
   node: { productId, name, type, thc, id, image, variants },
 }) => {
-  const [compositeId, setCompositeId] = useState(unundefined)
+  const [compositeId, setCompositeId] = useState(undefined)
 
   useEffect(() => {
     setCompositeId(
