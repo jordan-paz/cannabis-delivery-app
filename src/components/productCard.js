@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import weed from "../images/can.jpg"
 import { Card } from "@material-ui/core"
@@ -51,10 +51,16 @@ const ProductCardName = styled.span`
 const ProductCard = ({
   node: { productId, name, type, thc, id, image, variants },
 }) => {
+  const [compositeId, setCompositeId] = useState(unundefined)
+
+  useEffect(() => {
+    setCompositeId(
+      `${localStorage.companyId}-${localStorage.facilityId}-${productId}-${variants[0].id}`
+    )
+  })
+
   const { url } = image
   const { price } = variants[0]
-
-  const compositeId = `${localStorage.companyId}-${localStorage.facilityId}-${productId}-${variants[0].id}`
   return (
     <StyledCard>
       <CardContent>
