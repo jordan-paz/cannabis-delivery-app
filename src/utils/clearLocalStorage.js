@@ -1,0 +1,16 @@
+export default () => {
+  localStorage.removeItem("AccessToken")
+  localStorage.removeItem("IdToken")
+  localStorage.removeItem("TokenType")
+  localStorage.removeItem("name")
+  localStorage.removeItem("userId")
+  localStorage.removeItem("companyId")
+  localStorage.removeItem("ExpiresIn")
+  localStorage.removeItem("RefreshToken")
+  localStorage.removeItem("company")
+  localStorage.removeItem("deliveryAddress")
+  localStorage.removeItem("facilities")
+  localStorage.removeItem("user")
+  localStorage.removeItem("orderId")
+  localStorage.removeItem("facilityId")
+}

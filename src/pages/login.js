@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { AuthContext } from "../context/authContext"
 import { navigate } from "@reach/router"
 
-const Login = ({ history }) => {
+const Login = props => {
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
 
@@ -10,6 +10,7 @@ const Login = ({ history }) => {
     e.preventDefault()
     login(email, password)
   }
+
   return (
     <AuthContext.Consumer>
       {({ login, loggedIn }) => {

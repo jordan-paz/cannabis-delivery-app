@@ -25,7 +25,7 @@ const IndexPage = ({
   const concentrates = edges.filter(
     edge =>
       edge.node.category.name === "Wax" ||
-      edge.node.category.name === "Live-Resin"
+      edge.node.category.name === "Live Resin"
   )
 
   const topicals = edges.filter(edge => edge.node.category.name === "Topical")
@@ -54,6 +54,7 @@ export const query = graphql`
       edges {
         node {
           id
+          productId
           name
           brand {
             name
@@ -66,6 +67,7 @@ export const query = graphql`
             name
           }
           variants {
+            id
             flavor
             price
           }
