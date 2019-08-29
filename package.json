@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "sacramento-confidential-delivery",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Cannabis delivery for the greater Sacramento area",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jordan Paz",
   "dependencies": {
     "@material-ui/core": "^4.2.1",
     "@material-ui/styles": "^4.2.1",
