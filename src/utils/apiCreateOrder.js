@@ -5,7 +5,7 @@ export default () => {
     ? localStorage.deliveryAddress
     : null
   const idToken = localStorage.IdToken
-  const url = `http://localhost:5000/order/createOrder`
+  const url = `https://cryptic-stream-41886.herokuapp.com/order/createOrder`
   const data = { deliveryAddress }
   return axios
     .post(url, data, {
@@ -14,9 +14,6 @@ export default () => {
         authorization: `bearer ${idToken}`,
       },
     })
-    .then(response => {
-      localStorage.setItem("orderId", response.data._id)
-      return response.data
-    })
+    .then(response => response.data)
     .catch(err => console.log(err))
 }

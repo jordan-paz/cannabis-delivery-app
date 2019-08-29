@@ -105,15 +105,18 @@ export default function TemporaryDrawer() {
         >
           <List>
             {[
-              "Buds",
+              "Flower",
               "Vaporizers",
-              "Tinctures",
-              "Topicals",
+              "Concentrates",
+              "Tinctures & Topicals",
               "Edibles",
               "Prerolls",
               "Gear",
             ].map(text => (
-              <Link to={`/${text.toLowerCase()}`} key={text}>
+              <Link
+                to={`/${text.toLowerCase().replace(/\s+/g, "")}`}
+                key={text}
+              >
                 <ListItem>
                   <StyledListSpan>{text.toUpperCase()}</StyledListSpan>
                 </ListItem>

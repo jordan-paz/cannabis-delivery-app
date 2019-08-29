@@ -1,16 +1,16 @@
 import React, { createContext, useState, useEffect } from "react"
-import apiGetOrder from "../utils/apiGetOrder"
-import apiAddToOrder from "../utils/apiAddToOrder"
-import apiCreateOrder from "../utils/apiCreateOrder"
+import api from "../utils/api"
 
 const OrderContext = createContext({
   orderId: null,
   orderDetails: [],
   createOrder: () => {},
+  orderError: null,
 })
 
 const OrderProvider = ({ children }) => {
   const [orderDetails, setOrderDetails] = useState([])
+  const [orderError, setOrderError] = useState(null)
 
   const findQuantityOrdered = productId => {
     let count = 0
@@ -24,13 +24,27 @@ const OrderProvider = ({ children }) => {
 
   const addToOrder = (productId, quantityToAdd = 1) => {
     const quantity = findQuantityOrdered(productId) + quantityToAdd
-    apiAddToOrder(productId, quantity).then(data => console.log(data))
-    // setOrderDetails(response.details)
+    if (localStorage.orderId) {
+      const { orderId } = localStorage
+      api.addToOrder(orderId, productId, quantity).then(data => {
+        if (data.error === "SHOP_CLOSED") {
+          setOrderError(data.msg)
+          alert("Shop is closed")
+        } else {
+          setOrderDetails(data.details)
+        }
+      })
+    } else {
+      api.createOrder().then(data => {
+        localStorage.setItem("orderId", data._id)
+        api.addToOrder(data._id, productId, quantity)
+      })
+    }
   }
 
   useEffect(() => {
     if (localStorage.orderId) {
-      apiGetOrder().then(result => setOrderDetails(result.details))
+      api.getOrder().then(result => setOrderDetails(result.details))
     } else {
       setOrderDetails([])
     }

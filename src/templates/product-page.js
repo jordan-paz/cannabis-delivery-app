@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import weed from "../images/can.jpg"
 import addToCartIconWhite from "../images/add-to-cart-white.svg"
 import BackButton from "../components/backButton"
+import { OrderContext } from "../context/orderContext"
 
 const Main = styled.main`
   display: flex;
@@ -66,16 +67,27 @@ const AddToCartButtonText = styled.span`
 `
 const AddToCartButtonPrice = styled.span``
 
-const AddToCartButton = ({ price, productId }) => (
-  <StyledAddToCartButton>
-    <AddToCartButtonCart src={addToCartIconWhite} />
-    <AddToCartButtonText>Add to Cart</AddToCartButtonText>
-    <AddToCartButtonPrice>${price}</AddToCartButtonPrice>
-  </StyledAddToCartButton>
-)
+const AddToCartButton = ({ productId, price }) => {
+  const { addToOrder } = useContext(OrderContext)
+  return (
+    <StyledAddToCartButton onClick={() => addToOrder(productId)}>
+      <AddToCartButtonCart src={addToCartIconWhite} />
+      <AddToCartButtonText>Add to Cart</AddToCartButtonText>
+      <AddToCartButtonPrice>${price}</AddToCartButtonPrice>
+    </StyledAddToCartButton>
+  )
+}
 
 const ProductPage = ({ data: { product } }) => {
   const { price } = product.variants[0]
+
+  const [compositeId, setCompositeId] = useState(undefined)
+
+  useEffect(() => {
+    setCompositeId(
+      `${localStorage.companyId}-${localStorage.facilityId}-${product.productId}-${product.variants[0].id}`
+    )
+  })
 
   return (
     <Layout>
@@ -85,7 +97,7 @@ const ProductPage = ({ data: { product } }) => {
           <ProductImg src={product.image.url ? product.image.url : weed} />
           <h1>{product.name}</h1>
           <p>{product.description}</p>
-          <AddToCartButton price={price} productId={product.id} />
+          <AddToCartButton price={price} productId={compositeId} />
         </MainContent>
       </Main>
     </Layout>
@@ -104,12 +116,14 @@ export const query = graphql`
       }
       description
       featured
+      productId
       id
       image {
         url
       }
       name
       variants {
+        id
         price
         productId
         unitWeight

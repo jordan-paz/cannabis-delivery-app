@@ -1,7 +1,7 @@
 export default () => {
   try {
     const { orderId } = localStorage
-    const url = `http://localhost:5000/order/${orderId}`
+    const url = `https://cryptic-stream-41886.herokuapp.com/order/${orderId}`
     return fetch(url, {
       method: "GET",
       headers: {
