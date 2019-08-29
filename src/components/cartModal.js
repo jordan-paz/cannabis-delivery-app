@@ -48,6 +48,7 @@ const StyledCheckoutButton = styled(Button)`
 const StyledCartButton = styled(Button)`
   background-color: var(--primary-color);
   display: flex;
+  right: 0;
   justify-items: space-around;
   height: 48px;
   width: 100px;

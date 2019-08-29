@@ -3,7 +3,6 @@ import styled from "styled-components"
 import weed from "../images/can.jpg"
 import { Card } from "@material-ui/core"
 import CardContent from "@material-ui/core/CardContent"
-import addToCartIcon from "../images/add-to-cart.svg"
 import { navigate } from "@reach/router"
 import AddToCartButton from "./addToCartButton"
 

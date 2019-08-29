@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
 import { OrderContext } from "../context/orderContext"
 import addToCartIcon from "../images/add-to-cart.svg"
@@ -31,15 +31,12 @@ const StyledAddToCartButton = styled.button`
 `
 
 const AddToCartButton = ({ price, productId }) => {
+  const { addToOrder } = useContext(OrderContext)
   return (
-    <OrderContext.Consumer>
-      {({ addToOrder }) => (
-        <StyledAddToCartButton onClick={() => addToOrder(productId, 1)}>
-          <img src={addToCartIcon} alt="Add to cart" />
-          <span>${price}</span>
-        </StyledAddToCartButton>
-      )}
-    </OrderContext.Consumer>
+    <StyledAddToCartButton onClick={() => addToOrder(productId, 1)}>
+      <img src={addToCartIcon} alt="Add to cart" />
+      <span>${price}</span>
+    </StyledAddToCartButton>
   )
 }
 
