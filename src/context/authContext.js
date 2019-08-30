@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react"
 import setLocalStorage from "../utils/setLocalStorage"
 import clearLocalStorage from "../utils/clearLocalStorage"
-import apiLogin from "../utils/apiLogin"
+import api from "../utils/api"
 
 const AuthContext = createContext({
   loggedIn: false,
@@ -12,10 +12,11 @@ const AuthContext = createContext({
 const AuthProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(localStorage.user ? true : false)
 
-  const login = async (email, password) => {
-    const response = await apiLogin(email, password)
-    setLocalStorage(response)
-    setLoggedIn(true)
+  const login = (email, password) => {
+    api.login(email, password).then(data => {
+      setLocalStorage(data)
+      setLoggedIn(true)
+    })
   }
 
   const logout = () => {

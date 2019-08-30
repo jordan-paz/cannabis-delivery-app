@@ -1,8 +1,9 @@
 const axios = require("axios")
+const baseUrl = `https://cryptic-stream-41886.herokuapp.com/order`
 
 export default {
   addToOrder: (orderId, productId, quantity) => {
-    const url = `https://cryptic-stream-41886.herokuapp.com/order/${orderId}/addToOrder/${productId}/${quantity}`
+    const url = `${baseUrl}/${orderId}/addToOrder/${productId}/${quantity}`
     const authorization = `bearer ${localStorage.IdToken}`
     const headers = {
       "Content-Type": "application/json",
@@ -21,14 +22,14 @@ export default {
     const deliveryAddress = localStorage.deliveryAddress
       ? localStorage.deliveryAddress
       : null
-    const idToken = localStorage.IdToken
-    const url = `https://cryptic-stream-41886.herokuapp.com/order/createOrder`
+    const { IdToken } = localStorage
+    const url = `${baseUrl}/order/createOrder`
     const data = { deliveryAddress }
     return axios
       .post(url, data, {
         headers: {
           "Content-Type": "application/json",
-          authorization: `bearer ${idToken}`,
+          authorization: `bearer ${IdToken}`,
         },
       })
       .then(response => response.data)
@@ -37,7 +38,7 @@ export default {
   getOrder: () => {
     try {
       const { orderId } = localStorage
-      const url = `https://cryptic-stream-41886.herokuapp.com/order/${orderId}`
+      const url = `${baseUrl}/order/${orderId}`
       return fetch(url, {
         method: "GET",
         headers: {
@@ -54,20 +55,16 @@ export default {
     }
   },
 
-  login: async (email, password) => {
-    return await fetch("https://cryptic-stream-41886.herokuapp.com/login", {
-      method: "POST",
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(response => response.json())
-      .catch(function(error) {
-        console.log(error)
+  login: (email, password) => {
+    const url = `${baseUrl}/login`
+    const data = { email, password }
+    return axios
+      .post(url, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
+      .then(response => response.data)
+      .catch(err => console.log(err))
   },
 }
