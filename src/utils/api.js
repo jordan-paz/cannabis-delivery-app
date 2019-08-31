@@ -1,5 +1,6 @@
 const axios = require("axios")
 const baseUrl = `https://cryptic-stream-41886.herokuapp.com`
+// const baseUrl = `http://localhost:5000`
 
 export default {
   addToOrder: (orderId, productId, quantity) => {
