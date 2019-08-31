@@ -10,7 +10,6 @@ const OrderContext = createContext({
 
 const OrderProvider = ({ children }) => {
   const [orderDetails, setOrderDetails] = useState([])
-  const [orderError, setOrderError] = useState(null)
 
   const findQuantityOrdered = productId => {
     let count = 0
@@ -28,7 +27,6 @@ const OrderProvider = ({ children }) => {
       const { orderId } = localStorage
       api.addToOrder(orderId, productId, quantity).then(data => {
         if (data.error === "SHOP_CLOSED") {
-          setOrderError(data.msg)
           alert("Shop is closed")
         } else {
           setOrderDetails(data.details)

@@ -1,9 +1,9 @@
 const axios = require("axios")
-const baseUrl = `https://cryptic-stream-41886.herokuapp.com/order`
+const baseUrl = `https://cryptic-stream-41886.herokuapp.com`
 
 export default {
   addToOrder: (orderId, productId, quantity) => {
-    const url = `${baseUrl}/${orderId}/addToOrder/${productId}/${quantity}`
+    const url = `${baseUrl}/order/${orderId}/addToOrder/${productId}/${quantity}`
     const authorization = `bearer ${localStorage.IdToken}`
     const headers = {
       "Content-Type": "application/json",
