@@ -1,8 +1,5 @@
-import cartIcon from "../images/shopping-cart.svg"
+import cartIcon from "../../../images/shopping-cart.svg"
 import React from "react"
-import styled from "styled-components"
-import { makeStyles } from "@material-ui/core/styles"
-import Button from "@material-ui/core/Button"
 import Dialog from "@material-ui/core/Dialog"
 import ListItem from "@material-ui/core/ListItem"
 import List from "@material-ui/core/List"
@@ -11,61 +8,11 @@ import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import IconButton from "@material-ui/core/IconButton"
 import Typography from "@material-ui/core/Typography"
-import CloseIcon from "../images/close-x-white.svg"
+import CloseIcon from "../../../images/close-x-white.svg"
 import Fade from "@material-ui/core/Fade"
-
-import { OrderContext } from "../context/orderContext"
-
-const StyledCheckoutButton = styled(Button)`
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border: none;
-  display: flex;
-  flex-direction: row;
-  margin: 20px auto;
-  font-size: 15px;
-  background-color: var(--secondary-color);
-  color: #fff;
-  border-radius: 40px;
-  padding: 10px 30px;
-  width: 90vw;
-  height: 60px;
-  :hover {
-    cursor: pointer;
-    background-color: var(--secondary-color);
-  }
-  :focus {
-    outline: 0;
-  }
-  span {
-    font-size: 18px;
-    font-weight: bold;
-  }
-`
-
-const StyledCartButton = styled(Button)`
-  background-color: var(--primary-color);
-  display: flex;
-  right: 0;
-  justify-items: space-around;
-  height: 48px;
-  width: 100px;
-  border-radius: 0;
-  color: #fff;
-  span {
-    font-size: 24px;
-  }
-  :hover {
-    background-color: var(--primary-color);
-  }
-  .MuiButton-label {
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-  }
-`
+import { makeStyles } from "@material-ui/core/styles"
+import { StyledCheckoutButton, StyledCartButton } from "./styledComponents"
+import { OrderContext } from "../../../context/orderContext"
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -125,9 +72,9 @@ export default function CartModal({ userId }) {
                 </Toolbar>
               </AppBar>
               <List>
-                <ListItem></ListItem>
+                <ListItem>Item #1</ListItem>
                 <Divider />
-                <ListItem></ListItem>
+                <ListItem>Item #2</ListItem>
               </List>
               <StyledCheckoutButton>Checkout</StyledCheckoutButton>
             </Dialog>
