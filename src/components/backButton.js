@@ -10,9 +10,6 @@ const BackButtonWrapper = styled.header`
   width: 100%;
   height: 60px;
 `
-
-const BackButtonContent = styled.div``
-
 const StyledLink = styled.span`
   margin-left: 20px;
   display: flex;
@@ -29,14 +26,12 @@ const StyledLink = styled.span`
 
 const BackButton = ({ category }) => (
   <BackButtonWrapper>
-    <BackButtonContent>
-      <StyledLink onClick={() => window.history.back()}>
-        <img src={backArrow} alt="Backwards arrow" />
-        <span>
-          <b>BACK</b>
-        </span>
-      </StyledLink>
-    </BackButtonContent>
+    <StyledLink onClick={() => window.history.back()}>
+      <img src={backArrow} alt="Backwards arrow" />
+      <span>
+        <b>BACK</b>
+      </span>
+    </StyledLink>
   </BackButtonWrapper>
 )
 
