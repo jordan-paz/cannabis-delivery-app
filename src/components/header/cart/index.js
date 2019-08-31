@@ -1,5 +1,5 @@
 import cartIcon from "../../../images/shopping-cart.svg"
-import React from "react"
+import React, { useContext } from "react"
 import Dialog from "@material-ui/core/Dialog"
 import ListItem from "@material-ui/core/ListItem"
 import List from "@material-ui/core/List"
@@ -30,6 +30,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 })
 
 export default function CartModal({ userId }) {
+  const { orderDetails } = useContext(OrderContext)
   const classes = useStyles()
   const [open, setOpen] = React.useState(false)
 
@@ -42,45 +43,39 @@ export default function CartModal({ userId }) {
   }
 
   return (
-    <OrderContext.Consumer>
-      {({ orderDetails }) => {
-        return (
-          <div>
-            <StyledCartButton onClick={handleClickOpen}>
-              <img src={cartIcon} alt="cart" />
-              <span>{orderDetails.length}</span>
-            </StyledCartButton>
-            <Dialog
-              fullScreen
-              open={open}
-              onClose={handleClose}
-              TransitionComponent={Transition}
+    <div>
+      <StyledCartButton onClick={handleClickOpen}>
+        <img src={cartIcon} alt="cart" />
+        <span>{orderDetails.length}</span>
+      </StyledCartButton>
+      <Dialog
+        fullScreen
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Transition}
+      >
+        <AppBar className={classes.appBar}>
+          <Toolbar>
+            <Typography variant="h6" className={classes.title}>
+              Your Cart
+            </Typography>
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={handleClose}
+              aria-label="close"
             >
-              <AppBar className={classes.appBar}>
-                <Toolbar>
-                  <Typography variant="h6" className={classes.title}>
-                    Your Cart
-                  </Typography>
-                  <IconButton
-                    edge="start"
-                    color="inherit"
-                    onClick={handleClose}
-                    aria-label="close"
-                  >
-                    <img src={CloseIcon} alt="Close" />
-                  </IconButton>
-                </Toolbar>
-              </AppBar>
-              <List>
-                <ListItem>Item #1</ListItem>
-                <Divider />
-                <ListItem>Item #2</ListItem>
-              </List>
-              <StyledCheckoutButton>Checkout</StyledCheckoutButton>
-            </Dialog>
-          </div>
-        )
-      }}
-    </OrderContext.Consumer>
+              <img src={CloseIcon} alt="Close" />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <List>
+          <ListItem>Item #1</ListItem>
+          <Divider />
+          <ListItem>Item #2</ListItem>
+        </List>
+        <StyledCheckoutButton>Checkout</StyledCheckoutButton>
+      </Dialog>
+    </div>
   )
 }
