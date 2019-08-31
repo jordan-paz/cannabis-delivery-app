@@ -37,12 +37,32 @@ const IndexPage = ({
       <SEO title="Home" />
       <MainWrapper>
         <RegisterButton />
-        <CategoryScroller title={"Flower"} products={flower} />
-        <CategoryScroller title={"Vape-Cartridges"} products={cartridges} />
-        <CategoryScroller title={"Edibles"} products={edibles} />
-        <CategoryScroller title={"Concentrates"} products={concentrates} />
-        <CategoryScroller title={"Tinctures & Topicals"} products={topicals} />
-        <CategoryScroller title={"Gear"} products={gear} />
+        <CategoryScroller
+          title={"Flower"}
+          products={flower}
+          pageUrl={"flower"}
+        />
+        <CategoryScroller
+          title={"Vaporizers"}
+          products={cartridges}
+          pageUrl={"vaporizers"}
+        />
+        <CategoryScroller
+          title={"Edibles"}
+          products={edibles}
+          pageUrl={"edibles"}
+        />
+        <CategoryScroller
+          title={"Concentrates"}
+          products={concentrates}
+          pageUrl={"concentrates"}
+        />
+        <CategoryScroller
+          title={"Tinctures"}
+          products={topicals}
+          pageUrl={"tinctures&topicals"}
+        />
+        <CategoryScroller title={"Gear"} products={gear} pageUrl={"gear"} />
       </MainWrapper>
     </Layout>
   )
