@@ -1,37 +1,20 @@
 import React from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import RegisterButton from "../components/registerButton"
 import CategoryScroller from "../components/categoryScroller"
 import MainWrapper from "../components/mainWrapper"
 import SEO from "../components/seo"
 
-const IndexPage = ({
-  data: {
-    allProduct: { edges },
-  },
-}) => {
-  const flower = edges.filter(
-    edge => edge.node.category.name === "Pre-Packaged"
-  )
+import useFlower from "../hooks/useFlower"
+import useConcentrates from "../hooks/useConcentrates"
+import useEdibles from "../hooks/useEdibles"
+import useGear from "../hooks/useGear"
+import usePrerolls from "../hooks/usePrerolls"
+import useTinctures from "../hooks/useTinctures"
+import useVaporizers from "../hooks/useVaporizers"
 
-  const cartridges = edges.filter(
-    edge => edge.node.category.name === "Cartridge"
-  )
-
-  const edibles = edges.filter(edge => edge.node.category.name === "Edible")
-
-  const concentrates = edges.filter(
-    edge =>
-      edge.node.category.name === "Wax" ||
-      edge.node.category.name === "Live Resin"
-  )
-
-  const topicals = edges.filter(edge => edge.node.category.name === "Topical")
-
-  const gear = edges.filter(edge => edge.node.category.name === "Gear")
-
+const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
@@ -39,30 +22,39 @@ const IndexPage = ({
         <RegisterButton />
         <CategoryScroller
           title={"Flower"}
-          products={flower}
+          products={useFlower()}
           pageUrl={"flower"}
         />
         <CategoryScroller
+          title={"Prerolls"}
+          products={usePrerolls()}
+          pageUrl={"prerolls"}
+        />
+        <CategoryScroller
           title={"Vaporizers"}
-          products={cartridges}
+          products={useVaporizers()}
           pageUrl={"vaporizers"}
         />
         <CategoryScroller
           title={"Edibles"}
-          products={edibles}
+          products={useEdibles()}
           pageUrl={"edibles"}
         />
         <CategoryScroller
           title={"Concentrates"}
-          products={concentrates}
+          products={useConcentrates()}
           pageUrl={"concentrates"}
         />
         <CategoryScroller
           title={"Tinctures"}
-          products={topicals}
-          pageUrl={"tinctures&topicals"}
+          products={useTinctures()}
+          pageUrl={"tinctures"}
         />
-        <CategoryScroller title={"Gear"} products={gear} pageUrl={"gear"} />
+        <CategoryScroller
+          title={"Gear"}
+          products={useGear()}
+          pageUrl={"gear"}
+        />
       </MainWrapper>
     </Layout>
   )

@@ -1,55 +1,17 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import BackButton from "../components/backButton"
 import SEO from "../components/seo"
 import Catalog from "../components/catalog"
+import useVaporizers from "../hooks/useVaporizers"
 
-const VapeCartridgesPage = ({
-  data: {
-    allProduct: { edges },
-  },
-}) => {
+export default () => {
+  const products = useVaporizers()
   return (
     <Layout>
-      <SEO title="VapeCartridges" />
+      <SEO title="Vaporizers" />
       <BackButton />
-      <Catalog edges={edges} />
+      <Catalog products={products} />
     </Layout>
   )
 }
-
-export const query = graphql`
-  query LoadCartridges {
-    allProduct(filter: { category: { name: { eq: "Cartridge" } } }) {
-      edges {
-        node {
-          type
-          category {
-            name
-          }
-          subCategory {
-            name
-          }
-          description
-          featured
-          id
-          image {
-            url
-          }
-          name
-          variants {
-            price
-            productId
-            unitWeight
-            unit
-            flavor
-            description
-          }
-        }
-      }
-    }
-  }
-`
-
-export default VapeCartridgesPage

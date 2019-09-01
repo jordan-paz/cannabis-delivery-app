@@ -3,13 +3,13 @@ import Layout from "../components/layout"
 import BackButton from "../components/backButton"
 import SEO from "../components/seo"
 import Catalog from "../components/catalog"
-import useEdibles from "../hooks/useEdibles"
+import useTinctures from "../hooks/useTinctures"
 
 export default () => {
-  const products = useEdibles()
+  const products = useTinctures()
   return (
     <Layout>
-      <SEO title="Edibles" />
+      <SEO title="Tinctures" />
       <BackButton />
       <Catalog products={products} />
     </Layout>

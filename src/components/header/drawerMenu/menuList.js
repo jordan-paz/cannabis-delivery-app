@@ -19,7 +19,7 @@ export default ({ toggleDrawer }) => {
           "Flower",
           "Vaporizers",
           "Concentrates",
-          "Tinctures & Topicals",
+          "Tinctures",
           "Edibles",
           "Prerolls",
           "Gear",

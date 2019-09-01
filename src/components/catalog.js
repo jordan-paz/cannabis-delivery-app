@@ -9,21 +9,11 @@ const CatalogWrapper = styled.main`
   grid-gap: 20px;
 `
 
-const Catalog = ({ edges }) => {
-  edges.sort((a, b) => {
-    if (a.node.name < b.node.name) {
-      return -1
-    }
-    if (a.node.name > b.node.name) {
-      return 1
-    }
-    return 0
-  })
-
+const Catalog = ({ products }) => {
   return (
     <CatalogWrapper>
-      {edges.map(({ node }) => {
-        return <ProductCard key={node.id} node={node} />
+      {products.map(product => {
+        return <ProductCard key={product.id} product={product} />
       })}
     </CatalogWrapper>
   )

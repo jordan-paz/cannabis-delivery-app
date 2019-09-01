@@ -1,4 +1,5 @@
 import React from "react"
+
 import ProductCard from "../productCard"
 import arrow from "../../images/arrow.svg"
 import { navigate } from "@reach/router"
@@ -23,8 +24,8 @@ const CategoryScroller = ({ products, title, pageUrl }) => {
         </ScrollerHeaderLinkWrapper>
       </ScrollerHeader>
       <ScrollerWrapper>
-        {products.slice(0, 5).map(({ node }) => {
-          return <ProductCard node={node} key={node.id} />
+        {products.slice(0, 5).map(product => {
+          return <ProductCard product={product} key={product.id} />
         })}
       </ScrollerWrapper>
     </CategoryScrollerSection>
