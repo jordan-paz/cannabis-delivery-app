@@ -1,4 +1,4 @@
-import cartIcon from "../../../images/shopping-cart.svg"
+import cartIcon from "../../images/shopping-cart.svg"
 import React, { useContext } from "react"
 import Dialog from "@material-ui/core/Dialog"
 import ListItem from "@material-ui/core/ListItem"
@@ -8,11 +8,11 @@ import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import IconButton from "@material-ui/core/IconButton"
 import Typography from "@material-ui/core/Typography"
-import CloseIcon from "../../../images/close-x-white.svg"
+import CloseIcon from "../../images/close-x-white.svg"
 import Fade from "@material-ui/core/Fade"
 import { makeStyles } from "@material-ui/core/styles"
 import { StyledCheckoutButton, StyledCartButton } from "./styledComponents"
-import { OrderContext } from "../../../context/orderContext"
+import { OrderContext } from "../../context/orderContext"
 
 const useStyles = makeStyles(theme => ({
   appBar: {

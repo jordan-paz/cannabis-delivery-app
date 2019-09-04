@@ -12,7 +12,7 @@ import {
 } from "./styledComponents"
 
 const ProductCard = ({
-  node: { productId, name, type, thc, id, image, variants },
+  product: { productId, name, thc, id, image, variants },
 }) => {
   const [compositeId, setCompositeId] = useState(undefined)
 

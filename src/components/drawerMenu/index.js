@@ -1,7 +1,7 @@
 import React from "react"
 import MenuList from "./menuList"
-import Bars from "../../../images/menu-bars.svg"
-import CloseX from "../../../images/close-x-black.svg"
+import Bars from "../../images/menu-bars.svg"
+import CloseX from "../../images/close-x-black.svg"
 import {
   StyledDrawer,
   BarsWrapper,
