@@ -5,8 +5,8 @@ import ProductCard from "./productCard"
 const CatalogWrapper = styled.main`
   display: grid;
   justify-content: center;
-  grid-template-columns: 43vw 43vw;
-  grid-gap: 20px;
+  grid-template-columns: 47vw 47vw;
+  grid-gap: 15px;
 `
 
 const Catalog = ({ products }) => {

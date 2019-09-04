@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { StyledMenuList, StyledListSpan } from "./styledComponents"
-import { AuthContext } from "../../../context/authContext"
+import { AuthContext } from "../../context/authContext"
 import { Link } from "gatsby"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"

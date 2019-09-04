@@ -1,11 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import RegisterButton from "../components/registerButton"
 import CategoryScroller from "../components/categoryScroller"
-import MainWrapper from "../components/mainWrapper"
 import SEO from "../components/seo"
+import styled from "styled-components"
 
+// GraphQL query hooks //
 import useFlower from "../hooks/useFlower"
 import useConcentrates from "../hooks/useConcentrates"
 import useEdibles from "../hooks/useEdibles"
@@ -14,7 +14,15 @@ import usePrerolls from "../hooks/usePrerolls"
 import useTinctures from "../hooks/useTinctures"
 import useVaporizers from "../hooks/useVaporizers"
 
-const IndexPage = () => {
+const MainWrapper = styled.main`
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: flex-end;
+`
+
+export default () => {
   return (
     <Layout>
       <SEO title="Home" />
@@ -59,43 +67,3 @@ const IndexPage = () => {
     </Layout>
   )
 }
-
-export const query = graphql`
-  query LoadProducts {
-    allProduct {
-      edges {
-        node {
-          id
-          productId
-          name
-          brand {
-            name
-          }
-          image {
-            url
-          }
-          strain {
-            indicaSativaRatio
-            name
-          }
-          variants {
-            id
-            flavor
-            price
-          }
-          type
-          category {
-            id
-            name
-          }
-          subCategory {
-            id
-            name
-          }
-        }
-      }
-    }
-  }
-`
-
-export default IndexPage

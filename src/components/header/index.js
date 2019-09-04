@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useContext } from "react"
-import DrawerMenu from "./drawerMenu"
+import DrawerMenu from "../drawerMenu"
 import LocationBanner from "./locationBanner"
-import CartModal from "./cart"
+import Cart from "../cart"
 import { AuthContext } from "../../context/authContext"
 import { HeaderWrapper, HeaderContent, HeaderLogo } from "./styledComponents"
 
@@ -18,7 +18,7 @@ const Header = () => {
             <b>SCD</b>
           </HeaderLogo>
         </Link>
-        {loggedIn ? <CartModal /> : <Link to={"/login"}>Login</Link>}
+        {loggedIn ? <Cart /> : <Link to={"/login"}>Login</Link>}
       </HeaderContent>
       <LocationBanner />
     </HeaderWrapper>
