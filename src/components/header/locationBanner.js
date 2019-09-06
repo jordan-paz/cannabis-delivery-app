@@ -21,7 +21,10 @@ const LocationBanner = () => {
   return (
     <LocationBannerWrapper>
       <StyledAnnouncement>
-        Delivery to <b>3949 Orange Grove Ave</b>
+        Delivery to{" "}
+        <b>
+          <i>Your happy place</i>
+        </b>
       </StyledAnnouncement>
     </LocationBannerWrapper>
   )
