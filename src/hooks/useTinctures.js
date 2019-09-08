@@ -10,6 +10,7 @@ export default () => {
           edges {
             node {
               id
+              productId
               name
               brand {
                 name
@@ -22,6 +23,7 @@ export default () => {
                 name
               }
               variants {
+                id
                 flavor
                 price
               }

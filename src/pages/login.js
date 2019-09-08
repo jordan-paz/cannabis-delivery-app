@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react"
-import { AuthContext } from "../context/authContext"
+import AuthContext from "../context/authContext"
 import { navigate } from "@reach/router"
 
 const Login = props => {

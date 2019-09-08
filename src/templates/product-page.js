@@ -5,7 +5,7 @@ import styled from "styled-components"
 import weed from "../images/can.jpg"
 import addToCartIconWhite from "../images/add-to-cart-white.svg"
 import BackButton from "../components/backButton"
-import { OrderContext } from "../context/orderContext"
+import OrderContext from "../context/orderContext"
 
 const Main = styled.main`
   display: flex;
