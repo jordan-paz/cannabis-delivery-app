@@ -18,7 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
               subCategory {
                 name
               }
-              productId
+              compositeId
             }
           }
         }
@@ -36,7 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
         path: `products/${edge.node.id}`,
         component: productTemplate,
         context: {
-          productId: `${edge.node.productId}`,
+          compositeId: `${edge.node.compositeId}`,
           id: `${edge.node.id}`,
           type: `${edge.node.type}`,
           category: `${edge.node.category.name}`,

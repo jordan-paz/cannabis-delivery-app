@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useState, useEffect } from "react"
+import sizeof from "object-sizeof"
 
 const OrderContext = createContext({
   addToOrder: () => {},
@@ -8,9 +9,17 @@ const OrderContext = createContext({
 const OrderProvider = ({ children }) => {
   const [products, setProducts] = useState([])
 
-  const addToOrder = (productId, quantityToAdd = 1) => {
+  useEffect(() => {
+    if (products.length === 0) {
+      const products = JSON.parse(localStorage.getItem("products"))
+      setProducts(products ? products : [])
+    }
+  })
+
+  const addToOrder = (product, quantityToAdd = 1) => {
     for (let i = 0; i < quantityToAdd; i++) {
-      setProducts([...products, productId])
+      setProducts([...products, product])
+      localStorage.setItem("products", JSON.stringify([...products, product]))
     }
   }
 

@@ -67,28 +67,18 @@ const AddToCartButtonText = styled.span`
 `
 const AddToCartButtonPrice = styled.span``
 
-const AddToCartButton = ({ productId, price }) => {
+const AddToCartButton = ({ product }) => {
   const { addToOrder } = useContext(OrderContext)
   return (
-    <StyledAddToCartButton onClick={() => addToOrder(productId)}>
+    <StyledAddToCartButton onClick={() => addToOrder(product)}>
       <AddToCartButtonCart src={addToCartIconWhite} />
       <AddToCartButtonText>Add to Cart</AddToCartButtonText>
-      <AddToCartButtonPrice>${price}</AddToCartButtonPrice>
+      <AddToCartButtonPrice>${product.variants[0].price}</AddToCartButtonPrice>
     </StyledAddToCartButton>
   )
 }
 
 const ProductPage = ({ data: { product } }) => {
-  const { price } = product.variants[0]
-
-  const [compositeId, setCompositeId] = useState(undefined)
-
-  useEffect(() => {
-    setCompositeId(
-      `${localStorage.companyId}-${localStorage.facilityId}-${product.productId}-${product.variants[0].id}`
-    )
-  })
-
   return (
     <Layout>
       <Main>
@@ -97,7 +87,7 @@ const ProductPage = ({ data: { product } }) => {
           <ProductImg src={product.image.url ? product.image.url : weed} />
           <h1>{product.name}</h1>
           <p>{product.description}</p>
-          <AddToCartButton price={price} productId={compositeId} />
+          <AddToCartButton product={product} />
         </MainContent>
       </Main>
     </Layout>
@@ -116,7 +106,7 @@ export const query = graphql`
       }
       description
       featured
-      productId
+      compositeId
       id
       image {
         url

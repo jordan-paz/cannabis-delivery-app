@@ -7,10 +7,11 @@ exports.sourceNodes = (
   delete configOptions.plugins
   const processProduct = product => {
     const nodeId = createNodeId(`product-${product.id}`)
+    const compositeId = `48-51-${product.id}-${product.variants[0].id}`
     const nodeContent = JSON.stringify(product)
     const nodeData = Object.assign({}, product, {
       id: nodeId,
-      productId: product.id,
+      compositeId,
       parent: null,
       children: [],
       internal: {
