@@ -9,27 +9,32 @@ export default () => {
         allProduct(filter: { category: { name: { eq: "Pre-Roll" } } }) {
           edges {
             node {
-              type
-              category {
-                name
-              }
-              subCategory {
-                name
-              }
-              description
-              featured
               id
+              productId
+              name
+              brand {
+                name
+              }
               image {
                 url
               }
-              name
+              strain {
+                indicaSativaRatio
+                name
+              }
               variants {
-                price
-                productId
-                unitWeight
-                unit
+                id
                 flavor
-                description
+                price
+              }
+              type
+              category {
+                id
+                name
+              }
+              subCategory {
+                id
+                name
               }
             }
           }

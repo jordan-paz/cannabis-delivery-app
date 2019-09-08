@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import weed from "../../images/can.jpg"
 import CardContent from "@material-ui/core/CardContent"
 import { navigate } from "@reach/router"
@@ -14,14 +14,7 @@ import {
 const ProductCard = ({
   product: { productId, name, thc, id, image, variants },
 }) => {
-  const [compositeId, setCompositeId] = useState(undefined)
-
-  useEffect(() => {
-    setCompositeId(
-      `${localStorage.companyId}-${localStorage.facilityId}-${productId}-${variants[0].id}`
-    )
-  })
-
+  const compositeId = `48-51-${productId}-${variants[0].id}`
   const { url } = image
   const { price } = variants[0]
   return (
