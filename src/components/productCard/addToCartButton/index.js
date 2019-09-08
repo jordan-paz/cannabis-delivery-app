@@ -3,13 +3,12 @@ import OrderContext from "../../../context/orderContext"
 import { StyledAddToCartButton } from "./styledComponents"
 import addToCartIcon from "../../../images/add-to-cart.svg"
 
-export default ({ price, productId }) => {
+export default ({ product }) => {
   const { addToOrder } = useContext(OrderContext)
-
   return (
-    <StyledAddToCartButton onClick={() => addToOrder(productId, 1)}>
+    <StyledAddToCartButton onClick={() => addToOrder(product, 1)}>
       <img src={addToCartIcon} alt="Add to cart" />
-      <span>${price}</span>
+      <span>${product.variants[0].price}</span>
     </StyledAddToCartButton>
   )
 }

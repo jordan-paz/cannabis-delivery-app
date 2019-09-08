@@ -11,18 +11,14 @@ import {
   ProductCardName,
 } from "./styledComponents"
 
-const ProductCard = ({
-  product: { productId, name, thc, id, image, variants },
-}) => {
-  const compositeId = `48-51-${productId}-${variants[0].id}`
-  const { url } = image
-  const { price } = variants[0]
+const ProductCard = ({ product }) => {
+  const { name, thc, id, image, variants } = product
   return (
     <StyledCard>
       <CardContent>
         <ProductCardImgWrapper>
           <ProductCardImg
-            src={url ? url : weed}
+            src={image.url ? image.url : weed}
             onClick={() => navigate(`products/${id}`)}
           />
         </ProductCardImgWrapper>
@@ -31,7 +27,7 @@ const ProductCard = ({
             <ProductCardName>{name}</ProductCardName>
             {thc ? <p>"THC:" + thc + "%" </p> : null}
           </ProductCardPreview>
-          <AddToCartButton price={price} productId={compositeId} />
+          <AddToCartButton product={product} />
         </div>
       </CardContent>
     </StyledCard>

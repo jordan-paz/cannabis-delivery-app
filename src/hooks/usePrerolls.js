@@ -10,7 +10,7 @@ export default () => {
           edges {
             node {
               id
-              productId
+              compositeId
               name
               brand {
                 name
