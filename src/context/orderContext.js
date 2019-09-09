@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react"
-import sizeof from "object-sizeof"
 
 const OrderContext = createContext({
   addToOrder: () => {},
@@ -23,10 +22,21 @@ const OrderProvider = ({ children }) => {
     }
   }
 
+  const removeItem = id => {
+    const index = products.map(product => product.id).indexOf(id)
+    let newProducts = [...products]
+    if (index !== -1) {
+      newProducts.splice(index, 1)
+      setProducts(newProducts)
+      localStorage.setItem("products", JSON.stringify(newProducts))
+    }
+  }
+
   return (
     <OrderContext.Provider
       value={{
         addToOrder,
+        removeItem,
         products,
       }}
     >
