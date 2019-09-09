@@ -1,5 +1,6 @@
 import React from "react"
-import Dialog from "@material-ui/core/Dialog"
+// import Dialog from "@material-ui/core/Dialog"
+import { StyledDialog } from "./styledComponents"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import IconButton from "@material-ui/core/IconButton"
@@ -28,8 +29,7 @@ const useStyles = makeStyles(theme => ({
 export default ({ open, handleClose }) => {
   const classes = useStyles()
   return (
-    <Dialog
-      fullScreen
+    <StyledDialog
       open={open}
       onClose={handleClose}
       TransitionComponent={Transition}
@@ -51,6 +51,6 @@ export default ({ open, handleClose }) => {
       </AppBar>
       <CartDetails />
       <StyledCheckoutButton>Checkout</StyledCheckoutButton>
-    </Dialog>
+    </StyledDialog>
   )
 }

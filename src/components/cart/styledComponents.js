@@ -1,21 +1,17 @@
 import styled from "styled-components"
 import Button from "@material-ui/core/Button"
+import Dialog from "@material-ui/core/Dialog"
 
 export const StyledCheckoutButton = styled(Button)`
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
   border: none;
   display: flex;
-  flex-direction: row;
   margin: 20px auto;
   font-size: 15px;
   background-color: var(--secondary-color);
   color: #fff;
-  border-radius: 40px;
+  border-radius: 5px;
   padding: 10px 30px;
-  width: 90vw;
+  width: 90%;
   height: 60px;
   :hover {
     cursor: pointer;
@@ -48,5 +44,22 @@ export const StyledCartButton = styled(Button)`
     display: flex;
     justify-content: space-around;
     align-content: center;
+  }
+`
+
+export const StyledDialog = styled(Dialog)`
+  .MuiPaper-root {
+    right: 0;
+    width: 80vw;
+  }
+  .MuiDialog-container {
+    height: 100vh;
+  }
+  .MuiDialog-paper {
+    margin: 0;
+    height: 100%;
+  }
+  header {
+    max-height: 65px;
   }
 `

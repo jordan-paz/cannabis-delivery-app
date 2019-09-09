@@ -31,7 +31,8 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
     "react-router-dom": "^5.0.1",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "uniqid": "^5.0.3"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
