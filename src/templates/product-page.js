@@ -34,8 +34,6 @@ const ProductImg = styled.img`
 `
 
 const StyledAddToCartButton = styled.button`
-  position: fixed;
-  bottom: 0;
   border: none;
   display: flex;
   flex-direction: row;
@@ -45,7 +43,7 @@ const StyledAddToCartButton = styled.button`
   color: #fff;
   border-radius: 5px;
   padding: 10px 30px;
-  width: 90vw;
+  width: 100%;
   height: 60px;
   :hover {
     cursor: pointer;

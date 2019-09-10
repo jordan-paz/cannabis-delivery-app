@@ -48,11 +48,10 @@ export const StyledCloseNavButton = styled.button`
 
 export const StyledMenuList = styled.nav`
   width: 60vw;
-  padding-left: 2rem;
 `
 
 export const StyledListSpan = styled.span`
-  margin: 6px 0;
+  margin: 6px 6px;
   font-weight: bold;
   font-size: 20px;
   color: var(--black);
