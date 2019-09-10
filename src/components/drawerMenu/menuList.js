@@ -4,6 +4,7 @@ import AuthContext from "../../context/authContext"
 import { Link } from "gatsby"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
+import Divider from "@material-ui/core/Divider"
 
 export default ({ toggleDrawer }) => {
   const { logout } = useContext(AuthContext)
@@ -30,8 +31,9 @@ export default ({ toggleDrawer }) => {
             </ListItem>
           </Link>
         ))}
+        <Divider />
         <ListItem>
-          <StyledListSpan onClick={logout}>logout</StyledListSpan>
+          <StyledListSpan>LOGIN</StyledListSpan>
         </ListItem>
       </List>
     </StyledMenuList>

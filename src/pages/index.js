@@ -27,7 +27,6 @@ export default () => {
     <Layout>
       <SEO title="Home" />
       <MainWrapper>
-        <RegisterButton />
         <CategoryScroller
           title={"Flower"}
           products={useFlower()}

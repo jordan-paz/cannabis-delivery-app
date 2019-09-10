@@ -12,7 +12,7 @@ export const StyledCheckoutButton = styled(Button)`
   border-radius: 5px;
   padding: 10px 30px;
   width: 90%;
-  height: 60px;
+  height: 50px;
   :hover {
     cursor: pointer;
     background-color: var(--secondary-color);
@@ -31,7 +31,7 @@ export const StyledCartButton = styled(Button)`
   right: 0;
   justify-items: space-around;
   height: 48px;
-  width: 100px;
+  width: 80px;
   border-radius: 0;
   color: #fff;
   span {
@@ -50,10 +50,7 @@ export const StyledCartButton = styled(Button)`
 export const StyledDialog = styled(Dialog)`
   .MuiPaper-root {
     right: 0;
-    width: 80vw;
-  }
-  .MuiDialog-container {
-    height: 100vh;
+    width: 90vw;
   }
   .MuiDialog-paper {
     margin: 0;
