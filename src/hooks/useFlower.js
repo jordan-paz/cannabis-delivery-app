@@ -6,7 +6,9 @@ export default () => {
   } = useStaticQuery(
     graphql`
       query LoadFlower {
-        allProduct(filter: { category: { name: { eq: "Pre-Packaged" } } }) {
+        allProduct(
+          filter: { category: { name: { eq: "Pre-Packaged Flower" } } }
+        ) {
           edges {
             node {
               id

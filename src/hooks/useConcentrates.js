@@ -6,11 +6,7 @@ export default () => {
   } = useStaticQuery(
     graphql`
       query loadConcentrates {
-        allProduct(
-          filter: {
-            subCategory: { name: { in: ["Sauce", "Crumble", "Applicator"] } }
-          }
-        ) {
+        allProduct(filter: { category: { name: { in: ["Concentrate"] } } }) {
           edges {
             node {
               id
