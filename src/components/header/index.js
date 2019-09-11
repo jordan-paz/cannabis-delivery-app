@@ -17,7 +17,6 @@ const Header = () => {
             <b>SCD</b>
           </HeaderLogo>
         </Link>
-        <Login />
         <Cart />
       </HeaderContent>
       <LocationBanner />
