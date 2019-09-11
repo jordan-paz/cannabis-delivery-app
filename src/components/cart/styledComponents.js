@@ -50,7 +50,7 @@ export const StyledCartButton = styled(Button)`
 export const StyledDialog = styled(Dialog)`
   .MuiPaper-root {
     right: 0;
-    width: 90vw;
+    min-width: 80vw;
   }
   .MuiDialog-paper {
     margin: 0;

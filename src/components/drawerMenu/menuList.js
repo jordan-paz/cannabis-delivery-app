@@ -5,16 +5,14 @@ import { Link } from "gatsby"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import Divider from "@material-ui/core/Divider"
+import Login from "../login"
+import SignUp from "../signup.js"
 
 export default ({ toggleDrawer }) => {
   const { logout } = useContext(AuthContext)
 
   return (
-    <StyledMenuList
-      role="navigation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
+    <StyledMenuList role="navigation">
       <List>
         {[
           "Flower",
@@ -26,14 +24,24 @@ export default ({ toggleDrawer }) => {
           "Gear",
         ].map(text => (
           <Link to={`/${text.toLowerCase().replace(/\s+/g, "")}`} key={text}>
-            <ListItem>
+            <ListItem
+              onClick={toggleDrawer(false)}
+              onKeyDown={toggleDrawer(false)}
+            >
               <StyledListSpan>{text.toUpperCase()}</StyledListSpan>
             </ListItem>
           </Link>
         ))}
         <Divider />
         <ListItem>
-          <StyledListSpan>LOGIN</StyledListSpan>
+          <StyledListSpan>
+            <Login />
+          </StyledListSpan>
+        </ListItem>
+        <ListItem>
+          <StyledListSpan>
+            <SignUp />
+          </StyledListSpan>
         </ListItem>
       </List>
     </StyledMenuList>

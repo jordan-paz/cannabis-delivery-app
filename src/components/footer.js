@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 const FooterWrapper = styled.footer`
   background-color: #eee;
-  margin-top: 50px;
   display: flex;
   height: 300px;
   justify-content: center;
