@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import DrawerMenu from "../drawerMenu"
 import LocationBanner from "./locationBanner"
-import Cart from "../cart"
 import Login from "../login"
+
 import { HeaderWrapper, HeaderContent, HeaderLogo } from "./styledComponents"
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
             <b>SCD</b>
           </HeaderLogo>
         </Link>
-        <Cart />
+        <Login />
       </HeaderContent>
       <LocationBanner />
     </HeaderWrapper>

@@ -28,14 +28,20 @@ export const StyledCheckoutButton = styled(Button)`
 export const StyledCartButton = styled(Button)`
   background-color: var(--primary-color);
   display: flex;
-  right: 0;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
   justify-items: space-around;
-  height: 48px;
+  height: 80px;
   width: 80px;
-  border-radius: 0;
+  border-radius: 80px;
   color: #fff;
+  padding: 0 15px;
+  img {
+    width: 32px;
+  }
   span {
-    font-size: 24px;
+    font-size: 32px;
   }
   :hover {
     background-color: var(--primary-color);
