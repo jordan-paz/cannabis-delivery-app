@@ -15,8 +15,8 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
 
     --bg-color: #FFFFFF;
-    --primary-color: #FF3008;
-    --secondary-color: #FF3008;
+    --primary-color: #53A077;
+    --secondary-color: #53A077;
     --tertiary-color: #D3397E;
     --black: #181919;
     --grey: #DDD;

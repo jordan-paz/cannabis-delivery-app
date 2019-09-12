@@ -5,8 +5,6 @@ import { Link } from "gatsby"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import Divider from "@material-ui/core/Divider"
-import Login from "../login"
-// import SignUp from "../signup.js"
 
 export default ({ toggleDrawer }) => {
   const { logout } = useContext(AuthContext)
@@ -34,14 +32,10 @@ export default ({ toggleDrawer }) => {
         ))}
         <Divider />
         <ListItem>
-          <StyledListSpan>
-            <Login />
-          </StyledListSpan>
+          <StyledListSpan></StyledListSpan>
         </ListItem>
         <ListItem>
-          {/* <StyledListSpan>
-            <SignUp />
-          </StyledListSpan> */}
+          <StyledListSpan></StyledListSpan>
         </ListItem>
       </List>
     </StyledMenuList>

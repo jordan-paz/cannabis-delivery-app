@@ -1,8 +1,13 @@
 import React from "react"
 import Button from "@material-ui/core/Button"
+import { OpenModalButton } from "./styledComponents"
 
 export default ({ handleClickOpen }) => (
-  <Button variant="outlined" color="primary" onClick={() => handleClickOpen()}>
+  <OpenModalButton
+    variant="outlined"
+    color="primary"
+    onClick={() => handleClickOpen()}
+  >
     LOGIN
-  </Button>
+  </OpenModalButton>
 )
