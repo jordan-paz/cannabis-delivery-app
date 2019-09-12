@@ -22,6 +22,7 @@ export const StyledAddToCartButton = styled.button`
     margin: 0 5px 0 auto;
   }
   img {
+    max-height: 100%;
     max-width: 23px;
     margin: 0 auto 0 5px;
   }
