@@ -28,9 +28,8 @@ export const ScrollerHeaderTitle = styled.h1`
 export const ScrollerHeaderLink = styled.span`
   display: flex;
   align-items: center;
-  color: var(--primary-color);
   img {
-    margin-left: 10px;
+    margin-left: 5px;
   }
 `
 

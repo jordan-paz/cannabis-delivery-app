@@ -17,7 +17,6 @@ const StyledLink = styled.span`
   span {
     padding-top: 2px;
     padding-left: 2px;
-    color: var(--primary-color);
   }
   :hover {
     cursor: pointer;

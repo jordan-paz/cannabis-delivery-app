@@ -1,6 +1,20 @@
 import styled from "styled-components"
 import Button from "@material-ui/core/Button"
+import DialogTitle from "@material-ui/core/DialogTitle"
+
 import Dialog from "@material-ui/core/Dialog"
+
+export const StyledTitle = styled(DialogTitle)`
+  text-align: center;
+`
+
+export const StyledCloseButton = styled.button`
+  border: none;
+  background-color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+`
 
 export const StyledCheckoutButton = styled(Button)`
   border: none;
@@ -26,7 +40,7 @@ export const StyledCheckoutButton = styled(Button)`
   }
 `
 export const StyledCartButton = styled(Button)`
-  background-color: var(--primary-color);
+  background-color: #006caa;
   display: flex;
   position: fixed;
   right: 15px;

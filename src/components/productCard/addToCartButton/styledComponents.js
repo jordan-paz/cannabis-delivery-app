@@ -1,12 +1,12 @@
 import styled from "styled-components"
 
 export const StyledAddToCartButton = styled.button`
-  border: 2px solid var(--grey);
+  border: none;
   margin: 0 10px 10px 10px;
   align-content: center;
   display: flex;
-  background-color: #fff;
-  color: var(--primary-color);
+  background-color: #eaedec;
+  color: #000;
   border-radius: 5px;
   padding: 15px 25px;
   width: 90%;
@@ -19,10 +19,10 @@ export const StyledAddToCartButton = styled.button`
   span {
     font-size: 18px;
     font-weight: bold;
-    margin: 0 auto;
+    margin: 0 5px 0 auto;
   }
   img {
     max-width: 23px;
-    margin: 0 auto;
+    margin: 0 auto 0 5px;
   }
 `
