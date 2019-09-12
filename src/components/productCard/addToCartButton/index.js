@@ -7,8 +7,8 @@ export default ({ product }) => {
   const { addToOrder } = useContext(OrderContext)
   return (
     <StyledAddToCartButton onClick={() => addToOrder(product, 1)}>
-      <img src={addToCartIcon} alt="Add to cart" />
       <span>${product.variants[0].price}</span>
+      <img src={addToCartIcon} alt="Add to cart" />
     </StyledAddToCartButton>
   )
 }

@@ -1,5 +1,4 @@
 import styled from "styled-components"
-
 import DialogTitle from "@material-ui/core/DialogTitle"
 import Button from "@material-ui/core/Button"
 import TextField from "@material-ui/core/TextField"
@@ -27,6 +26,10 @@ export const CloseButton = styled(Button)`
 export const SubmitButton = styled(Button)`
   width: 100%;
   background-color: #eee;
+`
+
+export const OpenModalButton = styled(Button)`
+  max-height: 80%;
 `
 
 export const StyledTitle = styled(DialogTitle)``

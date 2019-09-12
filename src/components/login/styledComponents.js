@@ -30,6 +30,12 @@ export const SubmitButton = styled(Button)`
 
 export const OpenModalButton = styled(Button)`
   max-height: 80%;
+  background-color: #eaedec;
+  border: none;
+  color: #000;
+  :hover {
+    border: none;
+  }
 `
 
 export const StyledTitle = styled(DialogTitle)``

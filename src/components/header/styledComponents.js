@@ -4,7 +4,7 @@ export const HeaderWrapper = styled.header`
   position: fixed;
   left: 0;
   right: 0;
-  height: 45px;
+  height: 55px;
   top: 0;
   background-color: var(--bg-color);
 `
@@ -23,7 +23,7 @@ export const HeaderLogo = styled.h2`
 `
 
 export const LoginWrapper = styled.div`
-  margin: 0 5px 0 0;
+  margin: 0 10px 0 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;

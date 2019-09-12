@@ -8,11 +8,9 @@ export default () => {
   const { products } = useContext(OrderContext)
   const [open, setOpen] = useState(false)
 
-  function handleClickOpen() {
-    setOpen(true)
-  }
+  const handleClickOpen = () => setOpen(true)
 
-  function handleClose() {
+  const handleClose = () => {
     setOpen(false)
   }
 
