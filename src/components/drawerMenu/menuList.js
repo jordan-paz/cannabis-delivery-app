@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import Divider from "@material-ui/core/Divider"
-import SignUp from "../signup"
 
 export default ({ toggleDrawer }) => {
   const { logout } = useContext(AuthContext)
@@ -36,9 +35,7 @@ export default ({ toggleDrawer }) => {
           <StyledListSpan></StyledListSpan>
         </ListItem>
         <ListItem>
-          <StyledListSpan>
-            <SignUp />
-          </StyledListSpan>
+          <StyledListSpan></StyledListSpan>
         </ListItem>
       </List>
     </StyledMenuList>

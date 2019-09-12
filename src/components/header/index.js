@@ -4,20 +4,29 @@ import React from "react"
 import DrawerMenu from "../drawerMenu"
 import LocationBanner from "./locationBanner"
 import Login from "../login"
+import SignUp from "../signup"
 
-import { HeaderWrapper, HeaderContent, HeaderLogo } from "./styledComponents"
+import {
+  HeaderWrapper,
+  HeaderContent,
+  HeaderLogo,
+  LoginWrapper,
+} from "./styledComponents"
 
 const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderContent>
         <DrawerMenu />
-        <Link to="/">
-          <HeaderLogo>
+        <HeaderLogo>
+          <Link to="/">
             <b>SCD</b>
-          </HeaderLogo>
-        </Link>
-        <Login />
+          </Link>
+        </HeaderLogo>
+        <LoginWrapper>
+          <Login />
+          {/* <SignUp /> */}
+        </LoginWrapper>
       </HeaderContent>
       <LocationBanner />
     </HeaderWrapper>

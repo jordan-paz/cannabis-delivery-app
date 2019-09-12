@@ -9,14 +9,18 @@ export const StyledDrawer = styled(Drawer)`
 `
 
 export const BarsWrapper = styled.div`
-  margin-left: 1rem;
-  max-height: 100%;
-  padding-top: 3px;
+  display: flex;
+  height: 100%;
+  justify-content: flex-start;
+  align-content: center;
 `
 
 export const StyledNavBarButton = styled.button`
   border: none;
   background-color: #fff;
+  img {
+    width: 34px;
+  }
   :hover {
     cursor: pointer;
   }

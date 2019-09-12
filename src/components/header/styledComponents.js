@@ -11,12 +11,20 @@ export const HeaderWrapper = styled.header`
 
 export const HeaderContent = styled.div`
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 100%;
-  justify-content: space-between;
-  align-items: center;
 `
 
 export const HeaderLogo = styled.h2`
+  margin: 0 auto;
+  align-self: center;
   color: var(--primary-color);
+`
+
+export const LoginWrapper = styled.div`
+  margin: 0 5px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 `
