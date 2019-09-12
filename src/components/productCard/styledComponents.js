@@ -13,6 +13,7 @@ export const StyledCard = styled(Card)`
 
 export const ProductCardImg = styled.img`
   width: 100%;
+  height: 100%;
 `
 
 export const ProductCardImgWrapper = styled.div`
