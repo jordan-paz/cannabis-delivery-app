@@ -4,7 +4,6 @@ import React from "react"
 import DrawerMenu from "../drawerMenu"
 import LocationBanner from "./locationBanner"
 import Login from "../login"
-import SignUp from "../signup"
 
 import {
   HeaderWrapper,
@@ -25,7 +24,6 @@ const Header = () => {
         </HeaderLogo>
         <LoginWrapper>
           <Login />
-          {/* <SignUp /> */}
         </LoginWrapper>
       </HeaderContent>
       <LocationBanner />
