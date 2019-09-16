@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react"
 import TextField from "@material-ui/core/TextField"
 import { StyledForm } from "./styledComponents"
 import SubmitButton from "./submitButton"
+import authContext from "../../context/authContext"
 
 export default () => {
   const [values, setValues] = useState({
@@ -9,13 +10,19 @@ export default () => {
     password: "",
   })
 
+  const { login } = useContext(authContext)
+
   const handleChange = name => event => {
-    console.log("yo")
     setValues({ ...values, [name]: event.target.value })
   }
 
+  const handleSubmit = e => {
+    e.preventDefault()
+    login(values.email, values.password)
+  }
+
   return (
-    <StyledForm>
+    <StyledForm onSubmit={e => handleSubmit(e)}>
       <TextField
         id="outlined-name"
         label="Email"
