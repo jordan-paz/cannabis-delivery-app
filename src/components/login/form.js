@@ -1,16 +1,14 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
 import TextField from "@material-ui/core/TextField"
 import { StyledForm } from "./styledComponents"
 import SubmitButton from "./submitButton"
-import authContext from "../../context/authContext"
+import Spinner from "../loadingSpinner"
 
-export default () => {
+export default ({ login }) => {
   const [values, setValues] = useState({
     email: "",
     password: "",
   })
-
-  const { login } = useContext(authContext)
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value })
