@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import authContext from "../../context/authContext"
 
 import Dialog from "@material-ui/core/Dialog"
@@ -13,9 +13,15 @@ import SignUpSection from "./signUpSection.js"
 import { DialogWrapper, StyledTitle, CloseButton } from "./styledComponents"
 
 export default ({ open, handleClose }) => {
-  const { loading, login } = useContext(authContext)
+  const { loading, login, loggedIn } = useContext(authContext)
   const theme = useTheme()
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"))
+
+  useEffect(() => {
+    if (loggedIn) {
+      handleClose()
+    }
+  }, [loggedIn])
 
   return (
     <Dialog

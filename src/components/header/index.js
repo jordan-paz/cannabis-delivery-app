@@ -1,9 +1,11 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useContext } from "react"
 import DrawerMenu from "../drawerMenu"
 import LocationBanner from "./locationBanner"
 import Login from "../login"
+import AccountMenu from "../accountMenu"
+import authContext from "../../context/authContext"
 
 import {
   HeaderWrapper,
@@ -13,6 +15,7 @@ import {
 } from "./styledComponents"
 
 const Header = () => {
+  const { loggedIn } = useContext(authContext)
   return (
     <HeaderWrapper>
       <HeaderContent>
@@ -22,9 +25,13 @@ const Header = () => {
             <b>SCD</b>
           </Link>
         </HeaderLogo>
-        <LoginWrapper>
-          <Login />
-        </LoginWrapper>
+        {loggedIn ? (
+          <AccountMenu />
+        ) : (
+          <LoginWrapper>
+            <Login />
+          </LoginWrapper>
+        )}
       </HeaderContent>
       <LocationBanner />
     </HeaderWrapper>
