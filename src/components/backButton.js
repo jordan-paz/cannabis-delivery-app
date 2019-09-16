@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import backArrow from "../images/back-arrow.svg"
 
@@ -11,7 +10,7 @@ const BackButtonWrapper = styled.header`
   width: 100%;
   height: 60px;
 `
-const StyledLink = styled(Link)`
+const StyledLink = styled.span`
   margin-left: 20px;
   display: flex;
   align-content: center;
@@ -24,9 +23,9 @@ const StyledLink = styled(Link)`
   }
 `
 
-const BackButton = ({ category }) => (
+const BackButton = () => (
   <BackButtonWrapper>
-    <StyledLink to="/">
+    <StyledLink onClick={() => window.history.back()}>
       <img src={backArrow} alt="Backwards arrow" />
       <span>
         <b>BACK</b>
