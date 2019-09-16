@@ -7,6 +7,7 @@ import { useTheme } from "@material-ui/core/styles"
 import CloseIcon from "../../images/close-x-black.svg"
 
 import Form from "./form"
+import SignUpSection from "./signUpSection.js"
 import { DialogWrapper, StyledTitle, CloseButton } from "./styledComponents"
 
 export default ({ open, handleClose }) => {
@@ -25,6 +26,7 @@ export default ({ open, handleClose }) => {
           <img src={CloseIcon} alt="Close" />
         </CloseButton>
         <StyledTitle id="responsive-dialog-title">Log in</StyledTitle>
+        <SignUpSection />
         <Form />
       </DialogWrapper>
     </Dialog>
