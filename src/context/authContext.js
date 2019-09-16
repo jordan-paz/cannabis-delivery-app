@@ -14,6 +14,7 @@ const AuthProvider = ({ children }) => {
 
   const login = (email, password) => {
     api.login(email, password).then(data => {
+      console.log(data)
       setLocalStorage(data)
       setLoggedIn(true)
     })
