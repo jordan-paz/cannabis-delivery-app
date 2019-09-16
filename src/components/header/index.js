@@ -26,7 +26,9 @@ const Header = () => {
           </Link>
         </HeaderLogo>
         {loggedIn ? (
-          <AccountMenu />
+          <LoginWrapper>
+            <AccountMenu />
+          </LoginWrapper>
         ) : (
           <LoginWrapper>
             <Login />
