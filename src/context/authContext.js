@@ -7,16 +7,20 @@ const AuthContext = createContext({
   loggedIn: false,
   login: () => {},
   logout: () => {},
+  loading: false,
 })
 
 const AuthProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(localStorage.user ? true : false)
+  const [loading, setLoading] = useState(false)
 
   const login = (email, password) => {
+    setLoading(true)
     api.login(email, password).then(data => {
-      console.log(data)
       setLocalStorage(data)
       setLoggedIn(true)
+      setLoading(false)
+      window.history.back()
     })
   }
 
@@ -31,6 +35,7 @@ const AuthProvider = ({ children }) => {
         loggedIn,
         login,
         logout,
+        loading,
       }}
     >
       {children}
