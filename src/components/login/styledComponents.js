@@ -15,6 +15,7 @@ export const StyledForm = styled.form`
   flex-direction: column;
   width: 85%;
   align-items: center;
+  margin-top: 40px;
 `
 
 export const CloseButton = styled(Button)`
@@ -38,6 +39,29 @@ export const OpenModalButton = styled(Button)`
   }
 `
 
-export const StyledTitle = styled(DialogTitle)``
+export const StyledSignupSection = styled.section`
+  span {
+    font-size: 15px;
+  }
+`
+
+export const StyledSignupButton = styled(Button)`
+  font-size: 15px;
+  margin-left: 10px;
+  border: none;
+  background-color: #eaedec;
+  padding: 2px 10px;
+  border-radius: 4px;
+  :hover {
+    cursor: pointer;
+  }
+  :focus {
+    outline: 0;
+  }
+`
+
+export const StyledTitle = styled(DialogTitle)`
+  margin-bottom: 10px;
+`
 
 export const StyledTextField = styled(TextField)``
