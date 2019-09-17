@@ -20,7 +20,6 @@ const AuthProvider = ({ children }) => {
       setLocalStorage(data)
       setLoggedIn(true)
       setLoading(false)
-      window.history.back()
     })
   }
 

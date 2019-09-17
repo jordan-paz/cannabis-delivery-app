@@ -1,8 +1,16 @@
-import React from "react"
+import React, { useContext } from "react"
 import Menu from "@material-ui/core/Menu"
 import MenuItem from "@material-ui/core/MenuItem"
+import authContext from "../../context/authContext"
 
 export default ({ anchorEl, handleClose }) => {
+  const { logout } = useContext(authContext)
+
+  const handleLogoutClick = () => {
+    logout()
+    handleClose()
+  }
+
   return (
     <Menu
       id="simple-menu"
@@ -13,7 +21,7 @@ export default ({ anchorEl, handleClose }) => {
     >
       <MenuItem onClick={handleClose}>Profile</MenuItem>
       <MenuItem onClick={handleClose}>My account</MenuItem>
-      <MenuItem onClick={handleClose}>Logout</MenuItem>
+      <MenuItem onClick={handleLogoutClick}>Logout</MenuItem>
     </Menu>
   )
 }
