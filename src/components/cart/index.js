@@ -1,5 +1,5 @@
 import cartIcon from "../../images/shopping-cart.svg"
-import React, { useContext, useState, useEffect } from "react"
+import React, { useContext, useState } from "react"
 import { StyledCartButton } from "./styledComponents"
 import Modal from "./modal"
 import OrderContext from "../../context/orderContext"
