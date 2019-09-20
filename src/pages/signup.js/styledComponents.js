@@ -3,7 +3,7 @@ import DialogTitle from "@material-ui/core/DialogTitle"
 import Button from "@material-ui/core/Button"
 import TextField from "@material-ui/core/TextField"
 
-export const DialogWrapper = styled.div`
+export const FormWrapper = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
@@ -13,8 +13,9 @@ export const DialogWrapper = styled.div`
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 80%;
   align-items: center;
+  margin-top: 40px;
 `
 
 export const CloseButton = styled(Button)`
@@ -30,8 +31,37 @@ export const SubmitButton = styled(Button)`
 
 export const OpenModalButton = styled(Button)`
   max-height: 80%;
+  background-color: #eaedec;
+  border: none;
+  color: #000;
+  :hover {
+    border: none;
+  }
 `
 
-export const StyledTitle = styled(DialogTitle)``
+export const StyledSignupSection = styled.section`
+  span {
+    font-size: 15px;
+  }
+`
+
+export const StyledSignupButton = styled(Button)`
+  font-size: 15px;
+  margin-left: 10px;
+  border: none;
+  background-color: #eaedec;
+  padding: 2px 10px;
+  border-radius: 4px;
+  :hover {
+    cursor: pointer;
+  }
+  :focus {
+    outline: 0;
+  }
+`
+
+export const StyledTitle = styled(DialogTitle)`
+  margin-bottom: 10px;
+`
 
 export const StyledTextField = styled(TextField)``
