@@ -12,7 +12,7 @@ import {
 } from "./styledComponents"
 
 const ProductCard = ({ product }) => {
-  const { name, thc, id, image, variants } = product
+  const { name, thc, id, image } = product
   return (
     <StyledCard>
       <CardContent>

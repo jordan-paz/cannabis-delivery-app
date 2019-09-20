@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import RegisterButton from "../components/registerButton"
 import CategoryScroller from "../components/categoryScroller"
 import SEO from "../components/seo"
 import styled from "styled-components"
