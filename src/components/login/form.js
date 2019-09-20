@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import TextField from "@material-ui/core/TextField"
 import { StyledForm } from "./styledComponents"
 import SubmitButton from "./submitButton"
-import Spinner from "../loadingSpinner"
 
 export default ({ login }) => {
   const [values, setValues] = useState({
