@@ -1,5 +1,6 @@
 import React from "react"
 import AddToCartButton from "./addToCartButton"
+import LazyLoad from "react-lazyload"
 import {
   Card,
   CardWrapper,
@@ -15,7 +16,9 @@ export default ({ product }) => {
     <CardWrapper>
       <Card>
         <ImgWrapper>
-          <StyledImg src={image.url} />
+          <LazyLoad height={200}>
+            <StyledImg src={image.url} />
+          </LazyLoad>
         </ImgWrapper>
         <DetailsWrapper>
           <Title>
