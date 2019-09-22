@@ -7,10 +7,12 @@ import {
   DetailsWrapper,
   StyledImg,
   Title,
+  StyledPrice,
 } from "./styledComponents"
 
 export default ({ product }) => {
-  const { name, image } = product
+  const { name, thc, id, image, variants } = product
+  const { price } = variants[0]
   return (
     <CardWrapper>
       <Card>
