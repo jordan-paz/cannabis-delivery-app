@@ -2,6 +2,19 @@ import styled from "styled-components"
 import DialogTitle from "@material-ui/core/DialogTitle"
 import Button from "@material-ui/core/Button"
 import TextField from "@material-ui/core/TextField"
+import Dialog from "@material-ui/core/Dialog"
+
+export const StyledDialog = styled(Dialog)`
+  @media only screen and (min-width: 960px) {
+    border-radius: 5px;
+    margin: auto auto;
+    width: 60%;
+    height: 70%;
+    .MuiDialog-paperFullScreen {
+      border-radius: 5px;
+    }
+  }
+`
 
 export const DialogWrapper = styled.div`
   display: flex;

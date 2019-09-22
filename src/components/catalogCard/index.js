@@ -1,5 +1,6 @@
 import React from "react"
 import AddToCartButton from "./addToCartButton"
+import { Link } from "gatsby"
 import {
   Card,
   CardWrapper,
@@ -7,20 +8,18 @@ import {
   DetailsWrapper,
   StyledImg,
   Title,
-  StyledPrice,
 } from "./styledComponents"
 
 export default ({ product }) => {
-  const { name, thc, id, image, variants } = product
-  const { price } = variants[0]
+  const { name, image } = product
   return (
     <CardWrapper>
       <Card>
-        <ImgWrapper>
-          <StyledImg src={image.url} />
+        <ImgWrapper to={`/products/${product.id}`}>
+          <StyledImg src={image.url} alt={name} />
         </ImgWrapper>
         <DetailsWrapper>
-          <Title>
+          <Title to={`/products/${product.id}`}>
             <strong>{name}</strong>
           </Title>
           <AddToCartButton product={product} />

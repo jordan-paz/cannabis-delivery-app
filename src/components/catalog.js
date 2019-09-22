@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Card from "./catalogCard"
 
 const CatalogWrapper = styled.main`
+  padding: 0 10px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;

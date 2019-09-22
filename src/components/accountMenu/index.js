@@ -1,6 +1,6 @@
 import React from "react"
 import Menu from "./menu"
-import Button from "@material-ui/core/Button"
+import { OpenModalButton } from "./styledComponents"
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -17,13 +17,13 @@ export default function SimpleMenu() {
 
   return (
     <div>
-      <Button
+      <OpenModalButton
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
       >
         Hi {firstName} &#9660;
-      </Button>
+      </OpenModalButton>
       <Menu anchorEl={anchorEl} handleClose={handleClose} />
     </div>
   )

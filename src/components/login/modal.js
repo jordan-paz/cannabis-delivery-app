@@ -1,21 +1,20 @@
 import React, { useContext, useEffect } from "react"
 import authContext from "../../context/authContext"
 
-import Dialog from "@material-ui/core/Dialog"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
-import { useTheme } from "@material-ui/core/styles"
-
 import CloseIcon from "../../images/close-x-black.svg"
 
 import Form from "./form"
 import Spinner from "../loadingSpinner"
 import SignUpSection from "./signUpSection.js"
-import { DialogWrapper, StyledTitle, CloseButton } from "./styledComponents"
+import {
+  DialogWrapper,
+  StyledTitle,
+  CloseButton,
+  StyledDialog,
+} from "./styledComponents"
 
 export default ({ open, handleClose }) => {
   const { loading, login, loggedIn } = useContext(authContext)
-  const theme = useTheme()
-  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"))
 
   useEffect(() => {
     if (loggedIn) {
@@ -24,8 +23,8 @@ export default ({ open, handleClose }) => {
   }, [loggedIn])
 
   return (
-    <Dialog
-      fullScreen={fullScreen}
+    <StyledDialog
+      fullScreen
       open={open}
       onClose={handleClose}
       aria-labelledby="responsive-dialog-title"
@@ -44,6 +43,6 @@ export default ({ open, handleClose }) => {
           </>
         )}
       </DialogWrapper>
-    </Dialog>
+    </StyledDialog>
   )
 }
