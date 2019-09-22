@@ -1,53 +1,34 @@
 import styled from "styled-components"
-
-export const CategoryScrollerSection = styled.section`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 97%;
-  padding-bottom: 2rem;
-  border-bottom: solid 2px #ddd;
-  color: var(--black);
-`
-
-export const ScrollerHeader = styled.header`
-  display: flex;
-  width: 100%;
-  align-items: center;
-`
-
-export const ScrollerHeaderTitle = styled.h1`
-  font-size: 30px;
-  justify-self: flex-start;
-  padding-left: 2px;
-  border-bottom: 4px solid var(--primary-color);
-  border-length: 20px;
-  line-height: 40px;
-`
-
-export const ScrollerHeaderLink = styled.span`
-  display: flex;
-  align-items: center;
-  img {
-    margin-left: 5px;
-  }
-`
-
-export const ScrollerHeaderLinkWrapper = styled.span`
-  margin-left: auto;
-  padding-right: 15px;
-  :hover {
-    cursor: pointer;
-  }
-`
+import { Link } from "gatsby"
 
 export const ScrollerWrapper = styled.div`
+  align-self: flex-start;
+  width: 100%;
+  max-width: 1100px;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #d8dee3;
+  @media only screen and (min-width: 800px) {
+    width: 90%;
+    align-self: center;
+  }
+`
+
+export const Scroller = styled.div`
   overflow-x: scroll;
-  overflow-y: hidden;
   white-space: nowrap;
   width: 100%;
-  padding: 2px;
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(10, calc(42%));
+`
+export const Title = styled.h2`
+  display: inline-block;
+`
+
+export const HeaderWrapper = styled.div`
+  display: flex;
+  width: 100%;
+`
+
+export const ViewAllLink = styled(Link)`
+  margin: auto 20px auto auto;
 `

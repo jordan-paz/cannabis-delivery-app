@@ -1,17 +1,16 @@
+import React from "react"
 import styled from "styled-components"
 
 export const CardWrapper = styled.div`
-  display: inline-block;
+  display: flex;
   height: 300px;
-  width: 180px;
-  margin: 5px;
-  @media only screen and (min-width: 800px) {
-    height: 300px;
-    width: 180px;
-  }
-  @media only screen and (min-width: 1000px) {
+  width: 47%;
+  margin: 5px auto;
+  max-width: 280px;
+  @media only screen and (min-width: 600px) {
     height: 350px;
-    width: 210px;
+    width: 32%;
+    max-width: 280px;
   }
 `
 
@@ -20,7 +19,7 @@ export const Card = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  border: 1px solid #d8ded3;
+  border: 1px solid #d8dee3;
   border-radius: 3px;
 `
 

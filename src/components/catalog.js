@@ -1,19 +1,22 @@
 import React from "react"
 import styled from "styled-components"
-import ProductCard from "./productCard"
+import Card from "./catalogCard"
 
 const CatalogWrapper = styled.main`
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 47vw 47vw;
-  grid-gap: 15px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  @media only screen and (min-width: 1300px) {
+    max-width: 1200px;
+  }
 `
 
 const Catalog = ({ products }) => {
   return (
     <CatalogWrapper>
       {products.map(product => {
-        return <ProductCard key={product.id} product={product} />
+        return <Card key={product.id} product={product} />
       })}
     </CatalogWrapper>
   )
