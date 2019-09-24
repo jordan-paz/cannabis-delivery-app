@@ -8,6 +8,8 @@ export default () => {
     password: "",
     password2: "",
     phoneNumber: "",
+    fullName: "",
+    birthday: "",
   })
 
   const handleChange = name => event => {

@@ -5,7 +5,7 @@ export default () => {
   return (
     <StyledSignupSection>
       <span>
-        New to Sacramento Confidential Delivery?
+        New to SCD?
         <StyledSignupButton>Sign up</StyledSignupButton>
       </span>
     </StyledSignupSection>

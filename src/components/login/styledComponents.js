@@ -64,7 +64,7 @@ export const StyledSignupButton = styled(Button)`
   border: none;
   background-color: #eaedec;
   padding: 2px 10px;
-  border-radius: 4px;
+  border-radius: 2px;
   :hover {
     cursor: pointer;
   }

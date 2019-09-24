@@ -10,7 +10,7 @@ export const ScrollerWrapper = styled.div`
   margin-bottom: 20px;
   border-bottom: 1px solid #d8dee3;
   @media only screen and (min-width: 800px) {
-    width: 90%;
+    width: 80%;
     align-self: center;
   }
 `

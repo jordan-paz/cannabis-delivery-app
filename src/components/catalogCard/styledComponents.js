@@ -10,7 +10,7 @@ export const CardWrapper = styled.div`
   @media only screen and (min-width: 600px) {
     height: 350px;
     width: 32%;
-    max-width: 280px;
+    max-width: 260px;
   }
 `
 
@@ -46,6 +46,7 @@ export const StyledImg = styled.img`
   border-top-right-radius: 2px;
   object-fit: contain;
   max-width: 100%;
+  max-height: 100%;
 `
 
 export const Title = styled(Link)`
