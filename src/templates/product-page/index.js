@@ -1,69 +1,20 @@
 import React, { useContext } from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import styled from "styled-components"
-import weed from "../images/can.jpg"
-import addToCartIconWhite from "../images/add-to-cart-white.svg"
-import BackButton from "../components/backButton"
-import OrderContext from "../context/orderContext"
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-`
-
-const MainContent = styled.main`
-  min-height: 400px;
-  display: flex;
-  width: 90%;
-  flex-direction: column;
-  align-items: flex-start;
-  p {
-    line-height: 24px;
-    font-size: 17px;
-  }
-  button {
-    align-self: center;
-  }
-`
-
-const ProductImg = styled.img`
-  max-width: 100%;
-`
-
-const StyledAddToCartButton = styled.button`
-  border: none;
-  display: flex;
-  flex-direction: row;
-  margin: 20px auto;
-  font-size: 15px;
-  background-color: var(--secondary-color);
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 30px;
-  width: 100%;
-  height: 60px;
-  :hover {
-    cursor: pointer;
-  }
-  :focus {
-    outline: 0;
-  }
-  span {
-    font-size: 18px;
-    font-weight: bold;
-  }
-`
-
-const AddToCartButtonCart = styled.img`
-  width: 25px;
-`
-const AddToCartButtonText = styled.span`
-  margin: 0 auto;
-`
-const AddToCartButtonPrice = styled.span``
+import Layout from "../../components/layout"
+import weed from "../../images/can.jpg"
+import addToCartIconWhite from "../../images/add-to-cart-white.svg"
+import BackButton from "../../components/backButton"
+import OrderContext from "../../context/orderContext"
+import {
+  StyledAddToCartButton,
+  AddToCartButtonText,
+  AddToCartButtonPrice,
+  Main,
+  MainContent,
+  ProductImg,
+  AddToCartButtonCart,
+  UnitWeightBadge,
+} from "./styledComponents"
 
 const AddToCartButton = ({ product }) => {
   const { addToOrder } = useContext(OrderContext)
@@ -84,6 +35,12 @@ const ProductPage = ({ data: { product } }) => {
         <MainContent>
           <ProductImg src={product.image.url ? product.image.url : weed} />
           <h1>{product.name}</h1>
+          <UnitWeightBadge>
+            <strong>
+              {product.variants[0].unitWeight}
+              {product.variants[0].unit}
+            </strong>
+          </UnitWeightBadge>
           <p>{product.description}</p>
           <AddToCartButton product={product} />
         </MainContent>

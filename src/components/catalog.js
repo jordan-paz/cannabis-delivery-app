@@ -7,10 +7,10 @@ const CatalogWrapper = styled.main`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 700px;
   align-items: flex-start;
   @media only screen and (min-width: 1200px) {
-    max-width: 1100px;
+    max-width: 950px;
   }
 `
 

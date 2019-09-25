@@ -15,13 +15,13 @@ export default ({ product }) => {
   return (
     <CardWrapper>
       <Card>
-        <ImgWrapper>
+        <ImgWrapper to={`/products/${product.id}`}>
           <LazyLoad height={200}>
             <StyledImg src={image.url} />
           </LazyLoad>
         </ImgWrapper>
         <DetailsWrapper>
-          <Title>
+          <Title to={`/products/${product.id}`}>
             <strong>{name}</strong>
           </Title>
           <AddToCartButton product={product} />

@@ -1,6 +1,5 @@
 import React from "react"
 import AddToCartButton from "./addToCartButton"
-import { Link } from "gatsby"
 import {
   Card,
   CardWrapper,

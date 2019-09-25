@@ -8,8 +8,8 @@ const LocationBannerWrapper = styled.div`
   background-color: #fff;
   justify-content: center;
   align-items: center;
-  border-bottom: 1.6px solid var(--grey);
-  border-top: 1.6px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+  border-top: 1px solid var(--grey);
 `
 
 const StyledAnnouncement = styled.p`

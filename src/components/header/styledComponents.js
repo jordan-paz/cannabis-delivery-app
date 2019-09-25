@@ -17,6 +17,7 @@ export const HeaderContent = styled.div`
 `
 
 export const HeaderLogo = styled.h2`
+  font-size: 30px;
   margin: 0 auto;
   align-self: center;
   color: var(--primary-color);

@@ -7,10 +7,9 @@ export const CardWrapper = styled.div`
   width: 47%;
   margin: 5px auto;
   max-width: 280px;
-  @media only screen and (min-width: 600px) {
-    height: 350px;
+  @media only screen and (min-width: 550px) {
     width: 32%;
-    max-width: 260px;
+    max-width: 220px;
   }
 `
 
@@ -54,6 +53,6 @@ export const Title = styled(Link)`
   white-space: normal;
   display: block;
   color: #333333;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 12px;
 `
