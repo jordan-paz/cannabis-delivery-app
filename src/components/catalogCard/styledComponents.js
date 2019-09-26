@@ -53,6 +53,6 @@ export const Title = styled(Link)`
   white-space: normal;
   display: block;
   color: #333333;
-  font-size: 16px;
+  font-size: 13px;
   margin-bottom: 12px;
 `

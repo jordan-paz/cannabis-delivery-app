@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Card from "./catalogCard"
+import BackButton from "./backButton"
 
 const CatalogWrapper = styled.main`
   padding: 0 10px;
@@ -17,6 +18,7 @@ const CatalogWrapper = styled.main`
 const Catalog = ({ products }) => {
   return (
     <CatalogWrapper>
+      <BackButton />
       {products.map(product => {
         return <Card key={product.id} product={product} />
       })}

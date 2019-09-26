@@ -1,6 +1,9 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
+import GlobalStyle from "../../styles/global"
 import TextField from "@material-ui/core/TextField"
-import { StyledForm, FormWrapper } from "./styledComponents"
+import { StyledForm, FormWrapper, Title, CloseButton } from "./styledComponents"
+import CloseIcon from "../../images/close-x-black.svg"
 
 export default () => {
   const [values, setValues] = useState({
@@ -18,6 +21,13 @@ export default () => {
 
   return (
     <FormWrapper>
+      <GlobalStyle />
+      <Title>Sign Up</Title>
+      <Link to="/">
+        <CloseButton>
+          <img src={CloseIcon} alt="Close" />
+        </CloseButton>
+      </Link>
       <StyledForm>
         <TextField
           id="outlined-name"

@@ -9,7 +9,6 @@ export default () => {
   return (
     <Layout>
       <SEO title="Flower" />
-      <BackButton />
       <Catalog products={useFlower()} />
     </Layout>
   )

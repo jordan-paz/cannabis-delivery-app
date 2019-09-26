@@ -38,6 +38,7 @@ export const CloseButton = styled(Button)`
 `
 
 export const SubmitButton = styled(Button)`
+  margin-top: 20px;
   width: 100%;
   background-color: #eee;
 `
@@ -71,6 +72,12 @@ export const StyledSignupButton = styled(Button)`
   :focus {
     outline: 0;
   }
+`
+
+export const ForgotSpan = styled.span`
+  font-size: 14px;
+  margin-top: 20px;
+  margin: 10px auto 0 10px;
 `
 
 export const StyledTitle = styled(DialogTitle)`

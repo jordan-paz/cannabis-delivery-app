@@ -10,9 +10,7 @@ export default () => {
 
   const handleClickOpen = () => setOpen(true)
 
-  const handleClose = () => {
-    setOpen(false)
-  }
+  const handleClose = () => setOpen(false)
 
   return (
     <div>

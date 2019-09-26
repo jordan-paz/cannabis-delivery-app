@@ -10,7 +10,6 @@ export default () => {
   return (
     <Layout>
       <SEO title="Gear" />
-      <BackButton />
       <Catalog products={products} />
     </Layout>
   )

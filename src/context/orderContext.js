@@ -3,10 +3,12 @@ import React, { createContext, useState, useEffect } from "react"
 const OrderContext = createContext({
   addToOrder: () => {},
   products: [],
+  subtotal: 0,
 })
 
 const OrderProvider = ({ children }) => {
   const [products, setProducts] = useState([])
+  const [subtotal, setSubtotal] = useState(0)
 
   useEffect(() => {
     if (products.length === 0) {
@@ -19,6 +21,7 @@ const OrderProvider = ({ children }) => {
     for (let i = 0; i < quantityToAdd; i++) {
       setProducts([...products, product])
       localStorage.setItem("products", JSON.stringify([...products, product]))
+      setSubtotal(subtotal + product.variants[0].price)
     }
   }
 
@@ -29,6 +32,7 @@ const OrderProvider = ({ children }) => {
       newProducts.splice(index, 1)
       setProducts(newProducts)
       localStorage.setItem("products", JSON.stringify(newProducts))
+      setSubtotal(subtotal - products[index].variants[0].price)
     }
   }
 
@@ -38,6 +42,7 @@ const OrderProvider = ({ children }) => {
         addToOrder,
         removeItem,
         products,
+        subtotal,
       }}
     >
       {children}

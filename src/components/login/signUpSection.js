@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { StyledSignupSection, StyledSignupButton } from "./styledComponents"
 
 export default () => {
@@ -6,7 +7,9 @@ export default () => {
     <StyledSignupSection>
       <span>
         New to SCD?
-        <StyledSignupButton>Sign up</StyledSignupButton>
+        <Link to="/signup">
+          <StyledSignupButton>Sign up</StyledSignupButton>
+        </Link>
       </span>
     </StyledSignupSection>
   )

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import TextField from "@material-ui/core/TextField"
-import { StyledForm } from "./styledComponents"
+import { StyledForm, ForgotSpan } from "./styledComponents"
 import SubmitButton from "./submitButton"
 
 export default ({ login }) => {
@@ -40,6 +40,7 @@ export default ({ login }) => {
         variant="outlined"
         fullWidth
       />
+      <ForgotSpan>Forgot your password or email?</ForgotSpan>
       <SubmitButton />
     </StyledForm>
   )
