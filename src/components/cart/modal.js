@@ -15,7 +15,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Fade ref={ref} {...props} />
 })
 
-export default ({ open, handleClose }) => {
+export default ({ open, handleClose, removeItem, subtotal, products }) => {
   const theme = useTheme()
   return (
     <StyledDialog
@@ -32,7 +32,11 @@ export default ({ open, handleClose }) => {
       >
         <img src={CloseIcon} alt="Close" />
       </StyledCloseButton>
-      <CartDetails />
+      <CartDetails
+        removeItem={removeItem}
+        subtotal={subtotal}
+        products={products}
+      />
       <StyledCheckoutButton>Checkout</StyledCheckoutButton>
     </StyledDialog>
   )
