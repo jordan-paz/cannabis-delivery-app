@@ -5,7 +5,7 @@ import Modal from "./modal"
 import OrderContext from "../../context/orderContext"
 
 export default () => {
-  const { products } = useContext(OrderContext)
+  const { products, removeItem, subtotal } = useContext(OrderContext)
   const [open, setOpen] = useState(false)
 
   const handleClickOpen = () => setOpen(true)
@@ -18,7 +18,14 @@ export default () => {
         <img src={cartIcon} alt="cart" />
         <span>{products.length}</span>
       </StyledCartButton>
-      <Modal fullScreen open={open} handleClose={handleClose} />
+      <Modal
+        fullScreen
+        open={open}
+        handleClose={handleClose}
+        removeItem={removeItem}
+        subtotal={subtotal}
+        products={products}
+      />
     </div>
   )
 }
