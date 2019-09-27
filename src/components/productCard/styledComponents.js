@@ -1,21 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-export const CardWrapper = styled.div`
-  display: inline-block;
-  height: 300px;
-  width: 180px;
-  margin: 5px;
-  @media only screen and (min-width: 800px) {
-    height: 300px;
-    width: 180px;
-  }
-  @media only screen and (min-width: 1000px) {
-    height: 350px;
-    width: 210px;
-  }
-`
-
 export const Card = styled.div`
   display: flex;
   flex-direction: column;

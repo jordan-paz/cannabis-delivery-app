@@ -32,3 +32,18 @@ export const HeaderWrapper = styled.div`
 export const ViewAllLink = styled(Link)`
   margin: auto 20px auto auto;
 `
+
+export const CardContainer = styled.div`
+  margin: 5px;
+  display: inline-block;
+  height: 300px;
+  width: 180px;
+  @media only screen and (min-width: 800px) {
+    height: 300px;
+    width: 180px;
+  }
+  @media only screen and (min-width: 1000px) {
+    height: 350px;
+    width: 210px;
+  }
+`

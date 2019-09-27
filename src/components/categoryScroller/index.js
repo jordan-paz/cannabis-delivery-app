@@ -7,6 +7,7 @@ import {
   Scroller,
   ScrollerWrapper,
   ViewAllLink,
+  CardContainer,
 } from "./styledComponents"
 
 export default ({ products, title, pageUrl }) => {
@@ -19,7 +20,11 @@ export default ({ products, title, pageUrl }) => {
 
       <Scroller>
         {products.slice(0, 7).map(product => {
-          return <ProductCard product={product} key={product.id} />
+          return (
+            <CardContainer>
+              <ProductCard product={product} key={product.id} />
+            </CardContainer>
+          )
         })}
       </Scroller>
     </ScrollerWrapper>
