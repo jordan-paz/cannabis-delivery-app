@@ -3,8 +3,6 @@ import List from "@material-ui/core/List"
 import Divider from "@material-ui/core/Divider"
 import CartItem from "./cartItem"
 import CartTotal from "./cartTotal"
-import uniqid from "uniqid"
-
 import OrderContext from "../../context/orderContext"
 
 export default () => {
@@ -12,7 +10,7 @@ export default () => {
   return (
     <List>
       {products.map(product => (
-        <div key={uniqid()}>
+        <div key={product.id}>
           <CartItem product={product} removeItem={removeItem} />
           <Divider />
         </div>

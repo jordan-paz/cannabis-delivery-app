@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import Button from "@material-ui/core/Button"
 import DialogTitle from "@material-ui/core/DialogTitle"
-
 import Dialog from "@material-ui/core/Dialog"
 
 export const StyledTitle = styled(DialogTitle)`
@@ -79,4 +78,31 @@ export const StyledDialog = styled(Dialog)`
   header {
     max-height: 65px;
   }
+`
+
+export const TotalWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+`
+
+export const ItemImg = styled.img`
+  max-width: 70px;
+  margin-right: 10px;
+`
+
+export const ItemDetailsWrapper = styled.div`
+  height: 70px;
+  width: 75%;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`
+
+export const RemoveButton = styled.button`
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
 `
