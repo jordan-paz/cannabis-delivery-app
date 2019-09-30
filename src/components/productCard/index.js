@@ -15,7 +15,7 @@ export default ({ product }) => {
     <Card>
       <ImgWrapper to={`/products/${product.id}`}>
         <LazyLoad height={200}>
-          <StyledImg src={image.url} />
+          <StyledImg src={image.url} alt={name} />
         </LazyLoad>
       </ImgWrapper>
       <DetailsWrapper>
