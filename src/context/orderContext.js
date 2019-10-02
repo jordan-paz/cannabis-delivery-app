@@ -15,7 +15,7 @@ const OrderProvider = ({ children }) => {
       const products = JSON.parse(localStorage.getItem("products"))
       setProducts(products ? products : [])
     }
-  })
+  }, [products.length])
 
   const addToOrder = (product, quantityToAdd = 1) => {
     for (let i = 0; i < quantityToAdd; i++) {

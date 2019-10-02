@@ -11,6 +11,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.13.25",
     "gatsby-image": "^2.2.6",
+    "gatsby-plugin-create-client-paths": "^2.1.11",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.3",
     "gatsby-plugin-material-ui": "^2.1.4",
@@ -22,6 +23,7 @@
     "gatsby-source-filesystem": "^2.1.6",
     "gatsby-transformer-remark": "^2.6.9",
     "gatsby-transformer-sharp": "^2.2.3",
+    "netlify-identity-widget": "^1.5.5",
     "object-sizeof": "^1.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -29,6 +31,7 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
     "react-lazyload": "^2.6.2",
+    "react-netlify-identity": "^0.1.9",
     "react-router-dom": "^5.0.1",
     "styled-components": "^4.3.2"
   },

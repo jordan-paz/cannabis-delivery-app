@@ -3,7 +3,6 @@ import styled from "styled-components"
 import backArrow from "../images/back-arrow.svg"
 
 const BackButtonWrapper = styled.header`
-  margin-top: 140px;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
